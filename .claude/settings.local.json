@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(python -c \"import PIL; print\\('PIL OK', PIL.__version__\\)\")",
+      "Bash(python3 -c \"import PIL; print\\('PIL OK', PIL.__version__\\)\")",
+      "Bash(xxd public/images/tchaikovsky.webp)",
+      "Bash(xxd public/images/sabrina.webp)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}  type=%{content_type}  size=%{size_download}\" http://localhost:5173/images/tchaikovsky.webp)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}  type=%{content_type}  size=%{size_download}\" http://localhost:5173/images/sabrina.webp)",
+      "Bash(curl -s \"http://localhost:5173/src/components/HeroSection.vue\")"
+    ]
+  }
+}

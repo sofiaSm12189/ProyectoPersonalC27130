@@ -1,0 +1,179 @@
+/* ══════════════════════════════════════════════════════════
+   La Evolución de la Música  |  IF7102  |  Vue 3 + Vite
+   Tema: oscuro / misterioso  —  oro clásico → neón pop
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Google Fonts (cargadas también en index.html) ────── */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── Tokens de diseño ─────────────────────────────────── */
+:root {
+  /* Fondos */
+  --void:     #04040a;
+  --deep:     #07070e;
+  --surface:  #0c0b18;
+  --card-bg:  #111020;
+  --border:   #1c1930;
+
+  /* Oro clásico */
+  --gold-900: #1a0e02;
+  --gold-700: #6b5522;
+  --gold-500: #c9a84c;
+  --gold-300: #e8c97a;
+  --gold-100: #f5e8c0;
+
+  /* Romántico */
+  --crimson:       #6b1c1c;
+  --crimson-light: #b03030;
+
+  /* Jazz */
+  --amber:       #a05515;
+  --amber-light: #d8782a;
+
+  /* Rock */
+  --electric:      #1a3a7a;
+  --electric-glow: #3a7aff;
+
+  /* Pop / 80s */
+  --purple:      #4a1a7a;
+  --purple-mid:  #7c3aed;
+  --purple-glow: #c084fc;
+
+  /* Digital / 2000s+ */
+  --pink:      #a0166a;
+  --pink-glow: #f472b6;
+  --cyan-glow: #22d3ee;
+
+  /* Texto */
+  --txt-bright:  #f0ece8;
+  --txt-primary: #c8c0cc;
+  --txt-dim:     #7a7085;
+  --txt-muted:   #3d3848;
+
+  /* Tipografías */
+  --font-classical: 'Cinzel', 'Times New Roman', serif;
+  --font-romantic:  'Playfair Display', Georgia, serif;
+  --font-modern:    'Inter', -apple-system, sans-serif;
+
+  /* Easing */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:   cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Reset ────────────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--void);
+  color: var(--txt-primary);
+  font-family: var(--font-modern);
+  line-height: 1.75;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Capa de grano cinematográfico */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Scrollbar dorada */
+::-webkit-scrollbar          { width: 3px; }
+::-webkit-scrollbar-track    { background: var(--void); }
+::-webkit-scrollbar-thumb    { background: var(--gold-700); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-500); }
+
+/* ── Clases de revelación por scroll ─────────────────── */
+.reveal,
+.reveal-left,
+.reveal-right {
+  transition: opacity 0.9s var(--ease-expo), transform 0.9s var(--ease-expo);
+}
+
+.reveal       { opacity: 0; transform: translateY(52px); }
+.reveal-left  { opacity: 0; transform: translateX(-64px); }
+.reveal-right { opacity: 0; transform: translateX(64px); }
+
+.reveal.is-visible,
+.reveal-left.is-visible,
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Hijos con retraso escalonado */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s var(--ease-expo), transform 0.6s var(--ease-expo);
+}
+.stagger.is-visible > *:nth-child(1) { opacity:1; transform:none; transition-delay:0s;    }
+.stagger.is-visible > *:nth-child(2) { opacity:1; transform:none; transition-delay:0.1s;  }
+.stagger.is-visible > *:nth-child(3) { opacity:1; transform:none; transition-delay:0.2s;  }
+.stagger.is-visible > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.3s;  }
+.stagger.is-visible > *:nth-child(5) { opacity:1; transform:none; transition-delay:0.4s;  }
+.stagger.is-visible > *:nth-child(6) { opacity:1; transform:none; transition-delay:0.5s;  }
+.stagger.is-visible > *:nth-child(7) { opacity:1; transform:none; transition-delay:0.6s;  }
+.stagger.is-visible > *:nth-child(8) { opacity:1; transform:none; transition-delay:0.7s;  }
+.stagger.is-visible > *:nth-child(9) { opacity:1; transform:none; transition-delay:0.8s;  }
+
+/* ── Utilidades ──────────────────────────────────────── */
+.font-classical  { font-family: var(--font-classical); }
+.font-romantic   { font-family: var(--font-romantic); }
+.text-gold       { color: var(--gold-500); }
+.text-dim        { color: var(--txt-dim); }
+.glow-gold       { text-shadow: 0 0 18px var(--gold-500), 0 0 36px var(--gold-700); }
+.glow-purple     { text-shadow: 0 0 18px var(--purple-glow); }
+
+/* Eyebrow label */
+.eyebrow {
+  font-family: var(--font-modern);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold-700);
+  margin-bottom: 10px;
+}
+
+/* Section header genérico */
+.section-header {
+  text-align: center;
+  padding: 100px 24px 60px;
+}
+
+.section-header h2 {
+  font-family: var(--font-classical);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--txt-bright);
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+
+.section-header p.lead {
+  font-size: 1rem;
+  color: var(--txt-dim);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.9;
+}
+
+/* Divisor decorativo */
+.divider-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-500), transparent);
+  margin: 24px auto;
+}

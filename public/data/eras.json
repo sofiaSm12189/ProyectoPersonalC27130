@@ -1,0 +1,710 @@
+{
+  "title": "La Evolución de la Música",
+  "subtitle": "Desde la sabiduría clásica hasta la era del algoritmo",
+  "eras": [
+    {
+      "id": "clasicismo-tardio",
+      "yearStart": 1800,
+      "yearEnd": 1830,
+      "name": "El Clasicismo Tardío",
+      "tagline": "Cuando la música era un espejo del alma",
+      "colorTheme": "gold",
+      "accentColor": "#c9a84c",
+      "bgGradient": "radial-gradient(ellipse at 50% 40%, #1a0e00 0%, #0a0600 100%)",
+      "icon": "𝄞",
+      "description": "En los albores del siglo XIX la música vivía su apogeo como lenguaje del espíritu humano. La forma sonata alcanzaba su perfección matemática y el arte de combinar estructura con emoción llegó a su cumbre. Beethoven componía sus últimas sinfonías completamente sordo, un acto de voluntad creadora que el mundo jamás había visto. La música no era entretenimiento: era pensamiento, era filosofía sonora.",
+      "intellectualImpact": "Los grandes compositores de esta era estudiaban matemáticas, filosofía y literatura con la misma dedicación que la música. Beethoven leía a Kant y Goethe. Sus sinfonías son tratados filosóficos expresados en sonido. La investigación moderna confirma que escuchar música compleja activa simultáneamente las regiones del cerebro asociadas al lenguaje, la memoria episódica y el razonamiento espacial.",
+      "keyFigures": ["Ludwig van Beethoven", "Franz Schubert", "Gioachino Rossini", "Carl Maria von Weber"],
+      "characteristics": [
+        "Forma sonata perfectamente elaborada",
+        "Claridad y equilibrio temático",
+        "La sinfonía como cúspide del pensamiento musical",
+        "Transición entre el orden clásico y la expresión romántica"
+      ],
+      "songs": [
+        {
+          "title": "Sinfonía N.° 9 en Re menor, Op. 125",
+          "artist": "Ludwig van Beethoven",
+          "year": 1824,
+          "youtubeSearch": "Beethoven Symphony No 9 Ode to Joy Karajan",
+          "youtubeId": "",
+          "significance": "Compuesta cuando Beethoven era completamente sordo. Al terminar el estreno se giró para ver los aplausos que no podía escuchar. El mayor acto de fe en el poder creador humano."
+        },
+        {
+          "title": "Sonata 'Claro de Luna', Op. 27 No. 2",
+          "artist": "Ludwig van Beethoven",
+          "year": 1801,
+          "youtubeSearch": "Beethoven Moonlight Sonata Barenboim",
+          "youtubeId": "",
+          "significance": "Redefinió la forma de la sonata y abrió la puerta al Romanticismo musical."
+        },
+        {
+          "title": "Sinfonía Inacabada N.° 8 en Si menor",
+          "artist": "Franz Schubert",
+          "year": 1822,
+          "youtubeSearch": "Schubert Symphony No 8 Unfinished Abbado",
+          "youtubeId": "",
+          "significance": "La obra 'incompleta' más perfecta de la historia. Dos movimientos que valen por una sinfonía completa."
+        },
+        {
+          "title": "Ave Maria, D. 839",
+          "artist": "Franz Schubert",
+          "year": 1825,
+          "youtubeSearch": "Schubert Ave Maria Netrebko",
+          "youtubeId": "",
+          "significance": "Una de las melodías más reconocidas del mundo. La pureza hecha música."
+        }
+      ],
+      "narrationSrc": "/audio/narration-clasicismo.mp3",
+      "articles": [
+        {
+          "title": "Music and the brain: The neuroscience of music",
+          "author": "Stefan Koelsch",
+          "year": 2011,
+          "publication": "Nature Reviews Neuroscience",
+          "url": "https://www.nature.com/articles/nrn3088"
+        }
+      ]
+    },
+    {
+      "id": "romanticismo",
+      "yearStart": 1830,
+      "yearEnd": 1880,
+      "name": "El Gran Romanticismo",
+      "tagline": "La emoción desbordó las reglas",
+      "colorTheme": "crimson",
+      "accentColor": "#b03030",
+      "bgGradient": "radial-gradient(ellipse at 50% 40%, #1a0000 0%, #0a0303 100%)",
+      "icon": "♩",
+      "description": "El Romanticismo liberó a la música de sus corsés estructurales. Los compositores comenzaron a explorar el mundo interior con una intensidad nunca vista. Chopin capturaba la melancolía polaca en sus nocturnos. Liszt reinventó la técnica pianística. Wagner concibió óperas que duraban cuatro horas como experiencias totales que transformaban al espectador. La música reclamaba el derecho a ser tan densa y compleja como la vida misma.",
+      "intellectualImpact": "Los románticos creían que la música podía expresar lo que las palabras eran incapaces de decir. Nietzsche escribió que 'sin música, la vida sería un error'. Esta era vio nacer el concepto de que el arte tiene el poder de transformar la conciencia humana, una idea que sigue siendo válida.",
+      "keyFigures": ["Frédéric Chopin", "Franz Liszt", "Giuseppe Verdi", "Richard Wagner", "Robert Schumann", "Johannes Brahms"],
+      "characteristics": [
+        "Expresión emocional intensa y personal",
+        "Programas literarios y narrativos",
+        "Virtuosismo técnico extremo",
+        "Nacionalismo musical (Polonia, Hungría, Italia)"
+      ],
+      "songs": [
+        {
+          "title": "Nocturno Op. 9 No. 2 en Mi bemol mayor",
+          "artist": "Frédéric Chopin",
+          "year": 1832,
+          "youtubeSearch": "Chopin Nocturne Op 9 No 2 Rubinstein",
+          "youtubeId": "",
+          "significance": "La pieza más íntima de la historia. Cada nota es una confesión."
+        },
+        {
+          "title": "Rapsodia Húngara N.° 2",
+          "artist": "Franz Liszt",
+          "year": 1847,
+          "youtubeSearch": "Liszt Hungarian Rhapsody No 2 Horowitz",
+          "youtubeId": "",
+          "significance": "Liszt transformó el piano en una orquesta entera. Ningún pianista antes había hecho esto."
+        },
+        {
+          "title": "La Traviata (Libiamo ne'lieti calici)",
+          "artist": "Giuseppe Verdi",
+          "year": 1853,
+          "youtubeSearch": "Verdi La Traviata Brindisi Domingo",
+          "youtubeId": "",
+          "significance": "Opera que hablaba de amor, muerte y sociedad. Verdi era la banda sonora de Italia."
+        },
+        {
+          "title": "Sinfonía N.° 4 en Mi menor, Op. 98",
+          "artist": "Johannes Brahms",
+          "year": 1885,
+          "youtubeSearch": "Brahms Symphony No 4 Carlos Kleiber",
+          "youtubeId": "",
+          "significance": "La síntesis perfecta entre el rigor clásico y la pasión romántica."
+        },
+        {
+          "title": "Tristán e Isolda (Preludio y Muerte de Amor)",
+          "artist": "Richard Wagner",
+          "year": 1865,
+          "youtubeSearch": "Wagner Tristan und Isolde Prelude Karajan",
+          "youtubeId": "",
+          "significance": "El acorde de Tristán cambió la música occidental para siempre. Inicio de la armonía moderna."
+        }
+      ],
+      "narrationSrc": "/audio/narration-romanticismo.mp3",
+      "articles": [
+        {
+          "title": "Music lessons enhance IQ",
+          "author": "E. Glenn Schellenberg",
+          "year": 2004,
+          "publication": "Psychological Science",
+          "url": "https://journals.sagepub.com/doi/10.1111/j.0956-7976.2004.00711.x"
+        }
+      ]
+    },
+    {
+      "id": "post-romanticismo",
+      "yearStart": 1880,
+      "yearEnd": 1920,
+      "name": "Post-Romanticismo e Impresionismo",
+      "tagline": "El sonido disuelto en color y atmósfera",
+      "colorTheme": "teal",
+      "accentColor": "#2a8a6e",
+      "bgGradient": "radial-gradient(ellipse at 50% 40%, #001a14 0%, #000a08 100%)",
+      "icon": "♫",
+      "description": "Con Tchaikovsky la música rusa irrumpió en el escenario mundial con una sensualidad y drama desconocidos. Debussy disolvió los acordes en texturas de luz y agua, inventando el Impresionismo musical. Mahler componía sinfonías como universos completos que duraban más de una hora. Era el ocaso del romanticismo y el amanecer de algo totalmente nuevo. La música comenzaba a cuestionar sus propias reglas.",
+      "intellectualImpact": "Tchaikovsky demostró que la música podía generar imágenes mentales vivídísimas sin necesidad de palabras. El Lago de los Cisnes no necesita explicación: cada persona visualiza lo mismo. Esta capacidad sinestésica de la música es estudiada hoy como vínculo entre arte y cognición visual.",
+      "keyFigures": ["Piotr Ilyich Tchaikovsky", "Claude Debussy", "Gustav Mahler", "Antonín Dvořák", "Richard Strauss"],
+      "characteristics": [
+        "Orquestas de tamaño monumental",
+        "Timbre como elemento compositivo primario",
+        "Armonía extendida y cromatismo",
+        "Poemas sinfónicos y música programática"
+      ],
+      "songs": [
+        {
+          "title": "El Lago de los Cisnes, Op. 20",
+          "artist": "Piotr Ilyich Tchaikovsky",
+          "year": 1876,
+          "youtubeSearch": "Tchaikovsky Swan Lake Ballet Bolshoi full",
+          "youtubeId": "",
+          "significance": "El ballet más famoso de la historia. Tchaikovsky elevó la música de ballet al nivel de la sinfonía."
+        },
+        {
+          "title": "Claro de Luna (Suite Bergamasca)",
+          "artist": "Claude Debussy",
+          "year": 1905,
+          "youtubeSearch": "Debussy Clair de Lune Zimerman",
+          "youtubeId": "",
+          "significance": "No describe la luna: es la luna. La mayor obra del impresionismo musical."
+        },
+        {
+          "title": "Sinfonía N.° 5 en Do sostenido menor",
+          "artist": "Gustav Mahler",
+          "year": 1904,
+          "youtubeSearch": "Mahler Symphony No 5 Bernstein",
+          "youtubeId": "",
+          "significance": "El Adagietto de esta sinfonía es una de las páginas más hermosas jamás escritas."
+        },
+        {
+          "title": "Sinfonía del Nuevo Mundo N.° 9",
+          "artist": "Antonín Dvořák",
+          "year": 1893,
+          "youtubeSearch": "Dvorak New World Symphony Karajan",
+          "youtubeId": "",
+          "significance": "Dvořák tomó melodías afroamericanas y nativas y las convirtió en música universal."
+        }
+      ],
+      "narrationSrc": "/audio/narration-post-romanticismo.mp3",
+      "articles": [
+        {
+          "title": "Anatomically distinct dopamine release during anticipation and experience of peak emotion to music",
+          "author": "Salimpoor et al.",
+          "year": 2011,
+          "publication": "Nature Neuroscience",
+          "url": "https://www.nature.com/articles/nn.2726"
+        }
+      ]
+    },
+    {
+      "id": "jazz-blues",
+      "yearStart": 1920,
+      "yearEnd": 1950,
+      "name": "Jazz, Blues & Soul",
+      "tagline": "La resistencia convertida en arte",
+      "colorTheme": "amber",
+      "accentColor": "#d8782a",
+      "bgGradient": "radial-gradient(ellipse at 50% 40%, #1a0e00 0%, #0a0600 100%)",
+      "icon": "♬",
+      "description": "El Jazz nació de la comunidad afroamericana como un acto de resistencia cultural y de búsqueda de identidad. Por primera vez en la historia, una forma musical surgía desde los márgenes sociales y conquistaba el mundo entero. Louis Armstrong le mostró al mundo que la improvisación era una forma legítima y sublime de composición instantánea. El Blues documentó el dolor humano con una honestidad que pocas artes han logrado.",
+      "intellectualImpact": "La improvisación jazzística activa las regiones del cerebro asociadas al lenguaje espontáneo (estudios del NIH, 2008). El músico de jazz 'habla' con su instrumento igual que hablamos con palabras. Esta equivalencia entre música e idioma es evidencia de que la música es una función cognitiva fundamental, no un lujo.",
+      "keyFigures": ["Louis Armstrong", "Duke Ellington", "Billie Holiday", "Charlie Parker", "Miles Davis", "Bessie Smith"],
+      "characteristics": [
+        "Improvisación como lenguaje espontáneo",
+        "Síncopa y swing como base rítmica",
+        "Call and response (antífona musical)",
+        "Primera música que cruzó masivamente barreras raciales"
+      ],
+      "songs": [
+        {
+          "title": "What a Wonderful World",
+          "artist": "Louis Armstrong",
+          "year": 1967,
+          "youtubeSearch": "Louis Armstrong What a Wonderful World original",
+          "youtubeId": "",
+          "significance": "Grabada durante el movimiento por los derechos civiles, es un acto de esperanza radical."
+        },
+        {
+          "title": "Take the A Train",
+          "artist": "Duke Ellington",
+          "year": 1941,
+          "youtubeSearch": "Duke Ellington Take the A Train original recording",
+          "youtubeId": "",
+          "significance": "El tema oficial de la orquesta de Ellington. El jazz en estado puro."
+        },
+        {
+          "title": "Strange Fruit",
+          "artist": "Billie Holiday",
+          "year": 1939,
+          "youtubeSearch": "Billie Holiday Strange Fruit original 1939",
+          "youtubeId": "",
+          "significance": "La primera gran canción de protesta de la historia. Un poema sobre el racismo que ninguna radio quería tocar."
+        },
+        {
+          "title": "Round Midnight",
+          "artist": "Thelonious Monk",
+          "year": 1944,
+          "youtubeSearch": "Thelonious Monk Round Midnight original",
+          "youtubeId": "",
+          "significance": "El jazz se vuelve introspectivo. La música como confesionario."
+        },
+        {
+          "title": "So What",
+          "artist": "Miles Davis",
+          "year": 1959,
+          "youtubeSearch": "Miles Davis Kind of Blue So What",
+          "youtubeId": "",
+          "significance": "Del álbum Kind of Blue, el más vendido de la historia del jazz. La melancolía elevada a arte."
+        }
+      ],
+      "narrationSrc": "/audio/narration-jazz.mp3",
+      "articles": [
+        {
+          "title": "Neural correlates of creativity in improvisational jazz musicians",
+          "author": "Limb & Braun",
+          "year": 2008,
+          "publication": "PLOS ONE",
+          "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0001679"
+        }
+      ]
+    },
+    {
+      "id": "rock-soul",
+      "yearStart": 1950,
+      "yearEnd": 1970,
+      "name": "Rock & Roll y el Alma",
+      "tagline": "La guitarra eléctrica cambió el mundo",
+      "colorTheme": "electric",
+      "accentColor": "#3a7aff",
+      "bgGradient": "radial-gradient(ellipse at 50% 40%, #00081a 0%, #000510 100%)",
+      "icon": "♪",
+      "description": "El Rock nació de la fusión del Blues negro con la energía blanca y la guitarra eléctrica. Chuck Berry inventó el idioma. Elvis lo popularizó. The Beatles lo globalizaron. Esta fue la primera vez que la música joven se convirtió en identidad generacional. El Rock no era solo música: era una postura ante el mundo, una declaración de independencia cultural que aterrorizaba a los adultos y liberaba a los jóvenes.",
+      "intellectualImpact": "La investigadora Nina Kraus (Northwestern University) demostró que tocar un instrumento musical desde joven genera cambios estructurales permanentes en el cerebro: mayor materia gris en regiones auditivas, motoras y de lenguaje. Los músicos de esta era que comenzaron de niños literalmente construyeron cerebros diferentes.",
+      "keyFigures": ["Elvis Presley", "Chuck Berry", "The Beatles", "Jimi Hendrix", "Ray Charles", "James Brown"],
+      "characteristics": [
+        "La guitarra eléctrica como voz generacional",
+        "La rebelión juvenil como tema central",
+        "Puente entre la cultura negra y blanca",
+        "El álbum como obra de arte completa"
+      ],
+      "songs": [
+        {
+          "title": "Johnny B. Goode",
+          "artist": "Chuck Berry",
+          "year": 1958,
+          "youtubeSearch": "Chuck Berry Johnny B Goode original",
+          "youtubeId": "",
+          "significance": "La primera gran canción de rock and roll. La NASA la incluyó en la Voyager Golden Record enviada al espacio."
+        },
+        {
+          "title": "Hey Jude",
+          "artist": "The Beatles",
+          "year": 1968,
+          "youtubeSearch": "The Beatles Hey Jude official",
+          "youtubeId": "",
+          "significance": "7 minutos de pura catarsis colectiva. El 'na na na' final lo cantaron 300 millones de personas en simultáneo."
+        },
+        {
+          "title": "Purple Haze",
+          "artist": "Jimi Hendrix",
+          "year": 1967,
+          "youtubeSearch": "Jimi Hendrix Purple Haze original",
+          "youtubeId": "",
+          "significance": "Hendrix redefinió lo que una guitarra eléctrica podía hacer. Un instrumento diferente en sus manos."
+        },
+        {
+          "title": "(I Can't Get No) Satisfaction",
+          "artist": "The Rolling Stones",
+          "year": 1965,
+          "youtubeSearch": "Rolling Stones Satisfaction original",
+          "youtubeId": "",
+          "significance": "El riff más famoso de la historia. La insatisfacción como identidad generacional."
+        },
+        {
+          "title": "I Got You (I Feel Good)",
+          "artist": "James Brown",
+          "year": 1965,
+          "youtubeSearch": "James Brown I Feel Good original",
+          "youtubeId": "",
+          "significance": "El Padrino del Soul. James Brown inventó el funk y es el abuelo del hip-hop."
+        }
+      ],
+      "narrationSrc": "/audio/narration-rock-soul.mp3",
+      "articles": [
+        {
+          "title": "Music training for the development of auditory skills",
+          "author": "Nina Kraus & Bharath Chandrasekaran",
+          "year": 2010,
+          "publication": "Nature Reviews Neuroscience",
+          "url": "https://www.nature.com/articles/nrn2882"
+        }
+      ]
+    },
+    {
+      "id": "rock-clasico",
+      "yearStart": 1970,
+      "yearEnd": 1990,
+      "name": "Rock Clásico, Disco y Pop",
+      "tagline": "La era de los álbumes que duraron para siempre",
+      "colorTheme": "purple",
+      "accentColor": "#9b59b6",
+      "bgGradient": "radial-gradient(ellipse at 50% 40%, #0d001a 0%, #080010 100%)",
+      "icon": "𝄢",
+      "description": "Los setenta y ochenta vieron nacer los álbumes más ambiciosos de la historia. Pink Floyd construyó obras conceptuales que eran experiencias completas. Queen combinaba ópera con rock en una canción. Michael Jackson convirtió cada videoclip en una película de diez minutos. La producción musical alcanzó su complejidad máxima: grabaciones con decenas de capas, orquestas completas, efectos electrónicos pioneros. Era costoso, lento y brillante.",
+      "intellectualImpact": "Un álbum como The Dark Side of the Moon de Pink Floyd requería que el oyente le dedicara 43 minutos de atención concentrada para entenderlo como totalidad. Esta escucha profunda activa circuitos de atención y memoria que las canciones breves no pueden activar. Es la diferencia entre leer una novela y leer un tuit.",
+      "keyFigures": ["Led Zeppelin", "Pink Floyd", "Queen", "Michael Jackson", "David Bowie", "Elton John"],
+      "characteristics": [
+        "Álbumes conceptuales como obras totales",
+        "Producción de estudio como arte",
+        "El videoclip como medio expresivo (MTV, 1981)",
+        "La fusión de géneros: rock + ópera + funk + electrónica"
+      ],
+      "songs": [
+        {
+          "title": "Bohemian Rhapsody",
+          "artist": "Queen",
+          "year": 1975,
+          "youtubeSearch": "Queen Bohemian Rhapsody official video",
+          "youtubeId": "",
+          "significance": "6 minutos que cambiaron la radio. Ópera, balada y rock duro en una misma canción. Nadie sabía que eso era posible."
+        },
+        {
+          "title": "Stairway to Heaven",
+          "artist": "Led Zeppelin",
+          "year": 1971,
+          "youtubeSearch": "Led Zeppelin Stairway to Heaven original",
+          "youtubeId": "",
+          "significance": "La canción más radiada de la historia del rock clásico. Un viaje en 8 minutos."
+        },
+        {
+          "title": "Thriller",
+          "artist": "Michael Jackson",
+          "year": 1982,
+          "youtubeSearch": "Michael Jackson Thriller official video",
+          "youtubeId": "",
+          "significance": "El videoclip más visto de la historia. MJ convirtió el pop en espectáculo total."
+        },
+        {
+          "title": "The Wall (Another Brick in the Wall Pt. 2)",
+          "artist": "Pink Floyd",
+          "year": 1979,
+          "youtubeSearch": "Pink Floyd Another Brick in the Wall official",
+          "youtubeId": "",
+          "significance": "Una crítica al sistema educativo que se convirtió en himno generacional mundial."
+        },
+        {
+          "title": "Heroes",
+          "artist": "David Bowie",
+          "year": 1977,
+          "youtubeSearch": "David Bowie Heroes official",
+          "youtubeId": "",
+          "significance": "Grabada junto al Muro de Berlín. Una de las canciones más emocionantes jamás escritas."
+        }
+      ],
+      "narrationSrc": "/audio/narration-rock-clasico.mp3",
+      "articles": [
+        {
+          "title": "This Is Your Brain on Music: The Science of a Human Obsession",
+          "author": "Daniel J. Levitin",
+          "year": 2006,
+          "publication": "Dutton/Plume",
+          "url": "https://www.penguinrandomhouse.com/books/298640/this-is-your-brain-on-music-by-daniel-j-levitin/"
+        }
+      ]
+    },
+    {
+      "id": "pop-grunge-hiphop",
+      "yearStart": 1990,
+      "yearEnd": 2005,
+      "name": "Pop, Grunge y Hip-Hop",
+      "tagline": "MTV, la reacción y el nacimiento del rap",
+      "colorTheme": "grunge",
+      "accentColor": "#8b8b3a",
+      "bgGradient": "radial-gradient(ellipse at 50% 40%, #101000 0%, #080800 100%)",
+      "icon": "♩",
+      "description": "Los noventa fueron una batalla entre opuestos. El grunge de Nirvana rechazó la superficialidad del pop de los ochenta con guitarras sucias y letras de angustia existencial. Al mismo tiempo, Tupac y Notorious B.I.G. convertían las calles de Estados Unidos en literatura hip-hop de altísimo nivel. Y mientras tanto, el pop industrial de las boyband vendía discos por decenas de millones. Nunca hubo tanta diversidad musical en simultáneo.",
+      "intellectualImpact": "Las letras de Tupac Shakur son estudiadas en cátedras universitarias de literatura. El hip-hop demostró que la poesía puede vivir en el ritmo y la calle tanto como en la academia. Un estudio de la Universidad de Exeter (2017) encontró que el rap activa en el cerebro los mismos circuitos que la poesía formal.",
+      "keyFigures": ["Nirvana", "Tupac Shakur", "Whitney Houston", "Madonna", "The Notorious B.I.G.", "Backstreet Boys"],
+      "characteristics": [
+        "Fragmentación del mercado musical",
+        "El grunge como reacción auténtica al pop comercial",
+        "El hip-hop como voz de una generación marginalizada",
+        "La producción digital reemplaza instrumentos acústicos"
+      ],
+      "songs": [
+        {
+          "title": "Smells Like Teen Spirit",
+          "artist": "Nirvana",
+          "year": 1991,
+          "youtubeSearch": "Nirvana Smells Like Teen Spirit official",
+          "youtubeId": "",
+          "significance": "El grito de una generación. Kurt Cobain quería hacer una canción que sonara al peor pop. Accidentalmente inventó el grunge."
+        },
+        {
+          "title": "Changes",
+          "artist": "Tupac Shakur",
+          "year": 1992,
+          "youtubeSearch": "Tupac Changes official video",
+          "youtubeId": "",
+          "significance": "Poesía urbana sobre raza, pobreza y esperanza. Sigue siendo tan relevante hoy como hace 30 años."
+        },
+        {
+          "title": "I Will Always Love You",
+          "artist": "Whitney Houston",
+          "year": 1992,
+          "youtubeSearch": "Whitney Houston I Will Always Love You official",
+          "youtubeId": "",
+          "significance": "Considerada la mejor interpretación vocal pop de todos los tiempos. La voz humana como instrumento supremo."
+        },
+        {
+          "title": "Lose Yourself",
+          "artist": "Eminem",
+          "year": 2002,
+          "youtubeSearch": "Eminem Lose Yourself official",
+          "youtubeId": "",
+          "significance": "Primera canción de hip-hop en ganar el Óscar. El rap como narrativa cinematográfica."
+        },
+        {
+          "title": "Ray of Light",
+          "artist": "Madonna",
+          "year": 1998,
+          "youtubeSearch": "Madonna Ray of Light official",
+          "youtubeId": "",
+          "significance": "Madonna fusionó electrónica con pop y espiritualidad. Anticipó el dance-pop de los 2000."
+        }
+      ],
+      "narrationSrc": "/audio/narration-pop-grunge.mp3",
+      "articles": [
+        {
+          "title": "The neuroscience of rhythm, timing and motor control",
+          "author": "Grahn & Rowe",
+          "year": 2009,
+          "publication": "Experimental Brain Research",
+          "url": "https://link.springer.com/article/10.1007/s00221-008-1441-z"
+        }
+      ]
+    },
+    {
+      "id": "pop-digital",
+      "yearStart": 2005,
+      "yearEnd": 2016,
+      "name": "Pop Digital e Indie",
+      "tagline": "Internet democratizó la música... ¿o la destruyó?",
+      "colorTheme": "cyan",
+      "accentColor": "#22d3ee",
+      "bgGradient": "radial-gradient(ellipse at 50% 40%, #001a1a 0%, #000a0a 100%)",
+      "icon": "♫",
+      "description": "Napster, iTunes y luego Spotify cambiaron para siempre la relación de las personas con la música. Ahora todos tenían acceso a todo, en cualquier momento. Amy Winehouse grabó Back to Black con un sonido deliberadamente analógico y vendió 20 millones de copias en plena era digital. Adele probó que la voz humana sin filtros seguía siendo lo más poderoso. Pero también fue la era en que el álbum como formato comenzó a morir.",
+      "intellectualImpact": "La disponibilidad infinita de música redujo el tiempo promedio de escucha por canción. En 2005, la gente escuchaba 3 minutos completos. En 2015, el 25% de los oyentes ya saltaban a otra canción antes del primer minuto. La atención musical se estaba fragmentando antes de que TikTok existiera.",
+      "keyFigures": ["Amy Winehouse", "Adele", "Beyoncé", "Radiohead", "Lady Gaga", "Arctic Monkeys", "Kanye West"],
+      "characteristics": [
+        "Fin del álbum como formato dominante",
+        "El streaming frente a la propiedad de la música",
+        "Indie como reacción auténtica al pop corporativo",
+        "El autotune como instrumento estético, no correctivo"
+      ],
+      "songs": [
+        {
+          "title": "Rolling in the Deep",
+          "artist": "Adele",
+          "year": 2010,
+          "youtubeSearch": "Adele Rolling in the Deep official",
+          "youtubeId": "",
+          "significance": "En la era del autotune, Adele demostró que una voz real y honesta sigue siendo imparable."
+        },
+        {
+          "title": "Rehab",
+          "artist": "Amy Winehouse",
+          "year": 2006,
+          "youtubeSearch": "Amy Winehouse Rehab official video",
+          "youtubeId": "",
+          "significance": "Amy rechazó la rehabilitación en una canción y el mundo aplaudió. Su tragedia y su genio son inseparables."
+        },
+        {
+          "title": "Crazy in Love",
+          "artist": "Beyoncé",
+          "year": 2003,
+          "youtubeSearch": "Beyonce Crazy in Love official",
+          "youtubeId": "",
+          "significance": "Beyoncé definió el R&B del siglo XXI. Músico, performer y productora en una sola persona."
+        },
+        {
+          "title": "Creep",
+          "artist": "Radiohead",
+          "year": 1992,
+          "youtubeSearch": "Radiohead Creep official video",
+          "youtubeId": "",
+          "significance": "La canción del inadaptado que se volvió himno de todos los inadaptados del mundo."
+        },
+        {
+          "title": "Poker Face",
+          "artist": "Lady Gaga",
+          "year": 2008,
+          "youtubeSearch": "Lady Gaga Poker Face official",
+          "youtubeId": "",
+          "significance": "Gaga mezcló arte conceptual con pop de pista de baile. Probó que lo excéntrico puede ser masivo."
+        }
+      ],
+      "narrationSrc": "/audio/narration-pop-digital.mp3",
+      "articles": [
+        {
+          "title": "The Attention Economy and the Net",
+          "author": "Michael H. Goldhaber",
+          "year": 2004,
+          "publication": "First Monday",
+          "url": "https://firstmonday.org/article/view/1628/1543"
+        }
+      ]
+    },
+    {
+      "id": "era-algoritmo",
+      "yearStart": 2016,
+      "yearEnd": 2024,
+      "name": "La Era del Algoritmo",
+      "tagline": "Cuando la música la programa una IA, no un humano",
+      "colorTheme": "neon",
+      "accentColor": "#f472b6",
+      "bgGradient": "radial-gradient(ellipse at 50% 40%, #1a001a 0%, #0a000a 100%)",
+      "icon": "⟡",
+      "description": "TikTok no reproduce canciones completas: reproduce fragmentos de 15 segundos optimizados para el engagement. El algoritmo de Spotify decide qué música existe y cuál desaparece. Los artistas componen canciones diseñadas para ser virales, no para ser profundas. Los ganchos aparecen en los primeros 5 segundos porque el oyente promedio salta en 7. La hipersexualización es una estrategia de marketing calculada. La música dejó de ser arte y se convirtió en contenido.",
+      "intellectualImpact": "Un estudio de la Universidad de Harvard (2020) encontró que las canciones pop contemporáneas tienen vocabularios 40% más pequeños que las canciones pop de los años 80. La complejidad armónica promedio de los Billboard Top 10 ha caído un 60% entre 1960 y 2020. La pregunta que nos debemos hacer: ¿La música empobrecida empobrece al oyente, o es el oyente empobrecido quien pide música empobrecida?",
+      "keyFigures": ["Bad Bunny", "Billie Eilish", "The Weeknd", "Olivia Rodrigo", "Drake", "Sabrina Carpenter", "Taylor Swift"],
+      "characteristics": [
+        "Canciones diseñadas para algoritmos, no para personas",
+        "Fragmentación extrema de la atención (15-30 segundos)",
+        "Hipersexualización como estrategia de marketing calculada",
+        "La nostalgia como recurso ante la falta de originalidad"
+      ],
+      "songs": [
+        {
+          "title": "bad guy",
+          "artist": "Billie Eilish",
+          "year": 2019,
+          "youtubeSearch": "Billie Eilish bad guy official video",
+          "youtubeId": "",
+          "significance": "Billie grabó su primer álbum en su cuarto con su hermano. Prueba de que la democratización tecnológica también puede producir arte genuino."
+        },
+        {
+          "title": "Blinding Lights",
+          "artist": "The Weeknd",
+          "year": 2019,
+          "youtubeSearch": "The Weeknd Blinding Lights official",
+          "youtubeId": "",
+          "significance": "La canción más escuchada de la historia de Spotify. Nostalgia ochentera empaquetada en producción digital perfecta."
+        },
+        {
+          "title": "Espresso",
+          "artist": "Sabrina Carpenter",
+          "year": 2024,
+          "youtubeSearch": "Sabrina Carpenter Espresso official video",
+          "youtubeId": "",
+          "significance": "El hit del verano 2024. Catchy, producido algorítmicamente, diseñado para TikTok. Tiene todo excepto profundidad."
+        },
+        {
+          "title": "un verano sin ti (El Apagón)",
+          "artist": "Bad Bunny",
+          "year": 2022,
+          "youtubeSearch": "Bad Bunny El Apagon",
+          "youtubeId": "",
+          "significance": "Un momento de genuina conciencia política en la era del algoritmo. Excepción que confirma la regla."
+        },
+        {
+          "title": "drivers license",
+          "artist": "Olivia Rodrigo",
+          "year": 2021,
+          "youtubeSearch": "Olivia Rodrigo drivers license official",
+          "youtubeId": "",
+          "significance": "Viralizó en TikTok antes de ser lanzada oficialmente. El nuevo ciclo de vida de una canción."
+        }
+      ],
+      "narrationSrc": "/audio/narration-algoritmo.mp3",
+      "articles": [
+        {
+          "title": "Is pop music getting more repetitive? A data analysis",
+          "author": "Colin Morris",
+          "year": 2017,
+          "publication": "The Pudding",
+          "url": "https://pudding.cool/2017/05/song-repetition/"
+        },
+        {
+          "title": "A Quantitative Analysis of the Evolution of Popular Music in the USA",
+          "author": "Mauch et al.",
+          "year": 2015,
+          "publication": "Royal Society Open Science",
+          "url": "https://royalsocietypublishing.org/doi/10.1098/rsos.150081"
+        }
+      ]
+    }
+  ],
+  "academicReferences": [
+    {
+      "id": "ref-koelsch-2011",
+      "title": "Music and the brain: The neuroscience of music",
+      "author": "Stefan Koelsch",
+      "year": 2011,
+      "publication": "Nature Reviews Neuroscience",
+      "url": "https://www.nature.com/articles/nrn3088",
+      "summary": "Revisión exhaustiva de cómo la música activa múltiples regiones cerebrales simultáneamente, incluyendo procesamiento emocional, motor, lingüístico y de memoria."
+    },
+    {
+      "id": "ref-schellenberg-2004",
+      "title": "Music Lessons Enhance IQ",
+      "author": "E. Glenn Schellenberg",
+      "year": 2004,
+      "publication": "Psychological Science",
+      "url": "https://journals.sagepub.com/doi/10.1111/j.0956-7976.2004.00711.x",
+      "summary": "Estudio con 144 niños de 6 años: los que recibieron lecciones de música tuvieron aumentos significativos en CI comparados con el grupo control."
+    },
+    {
+      "id": "ref-salimpoor-2011",
+      "title": "Anatomically distinct dopamine release during anticipation and experience of peak emotion to music",
+      "author": "Salimpoor, Benovoy, Larcher, Dagher & Zatorre",
+      "year": 2011,
+      "publication": "Nature Neuroscience",
+      "url": "https://www.nature.com/articles/nn.2726",
+      "summary": "Primera evidencia de que la música libera dopamina en el núcleo accumbens, el mismo circuito del placer activado por comida y sexo."
+    },
+    {
+      "id": "ref-limb-2008",
+      "title": "Neural substrates of spontaneous musical performance: An fMRI study of jazz improvisation",
+      "author": "Charles J. Limb & Allen R. Braun",
+      "year": 2008,
+      "publication": "PLOS ONE",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0001679",
+      "summary": "Durante la improvisación de jazz, se activa la misma región del cerebro que durante el habla espontánea, sugiriendo que la música es un lenguaje cognitivo real."
+    },
+    {
+      "id": "ref-kraus-2010",
+      "title": "Music training for the development of auditory skills",
+      "author": "Nina Kraus & Bharath Chandrasekaran",
+      "year": 2010,
+      "publication": "Nature Reviews Neuroscience",
+      "url": "https://www.nature.com/articles/nrn2882",
+      "summary": "El entrenamiento musical genera cambios estructurales en el cerebro: mayor materia gris auditiva, mejora en discriminación de sonidos del habla y memoria de trabajo."
+    },
+    {
+      "id": "ref-levitin-2006",
+      "title": "This Is Your Brain on Music: The Science of a Human Obsession",
+      "author": "Daniel J. Levitin",
+      "year": 2006,
+      "publication": "Dutton/Plume Books",
+      "url": "https://www.penguinrandomhouse.com/books/298640/this-is-your-brain-on-music-by-daniel-j-levitin/",
+      "summary": "El neurocientífico y productor musical explica cómo la música es la actividad humana que más zonas del cerebro activa simultáneamente."
+    },
+    {
+      "id": "ref-mauch-2015",
+      "title": "The evolution of popular music: USA 1960-2010",
+      "author": "Mauch, MacCallum, Levy & Leroi",
+      "year": 2015,
+      "publication": "Royal Society Open Science",
+      "url": "https://royalsocietypublishing.org/doi/10.1098/rsos.150081",
+      "summary": "Análisis cuantitativo de 17,000 canciones del Billboard Hot 100. Demuestra la pérdida progresiva de diversidad armónica y el incremento de la repetición en el pop contemporáneo."
+    }
+  ]
+}
