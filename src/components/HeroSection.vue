@@ -90,7 +90,7 @@
         De la sinfonía que reveló el alma humana<br />
         al pop que fabrica el algoritmo
       </p>
-      <a href="#timeline" class="hero__cta">
+      <a href="#timeline" class="hero__cta" @click="playClick">
         <span>Comenzar el viaje</span>
         <span class="hero__cta-arrow" aria-hidden="true">↓</span>
       </a>
@@ -106,6 +106,16 @@
 <script setup>
 const tchaikovskyImg = "/images/tchaikovsky.webp";
 const sabrinaImg = "/images/sabrina.webp";
+
+// Sonido de click para el botón "Comenzar el viaje"
+const clickSound =
+  typeof Audio !== "undefined" ? new Audio("/audio/click.mp3") : null;
+function playClick() {
+  if (!clickSound) return;
+  clickSound.currentTime = 0;
+  clickSound.volume = 0.6;
+  clickSound.play().catch(() => {});
+}
 
 function particleStyle(n) {
   return {
@@ -356,14 +366,14 @@ function particleStyle(n) {
 
 .hero__composer-name {
   font-family: var(--font-romantic);
-  font-size: 2.4rem;
+  font-size: clamp(1.3rem, 1.9vw, 2.4rem);
   font-weight: 400;
   color: var(--gold-100);
   line-height: 1.05;
 }
 .hero__composer-name strong {
   display: block;
-  font-size: 3.2rem;
+  font-size: clamp(1.9rem, 2.8vw, 3.2rem);
   font-weight: 700;
 }
 .hero__composer-name--modern {
@@ -434,23 +444,24 @@ function particleStyle(n) {
   width: 100%;
   background: linear-gradient(
     to top,
-    var(--void) 50%,
-    rgba(4, 4, 10, 0.5) 80%,
-    transparent 100%
+    var(--void) 20%,
+    rgba(4, 4, 10, 0.45) 48%,
+    transparent 78%
   );
 }
 
 .hero__eyebrow {
-  font-size: 0.65rem;
+  font-size: 0.95rem;
   letter-spacing: 5px;
   text-transform: uppercase;
-  color: var(--gold-700);
-  margin-bottom: 14px;
+  color: var(--gold-500);
+  margin-bottom: 18px;
+  text-shadow: 0 0 14px rgba(201, 168, 76, 0.35);
 }
 
 .hero__title {
   font-family: var(--font-classical);
-  font-size: clamp(2.2rem, 5.5vw, 4.5rem);
+  font-size: clamp(2rem, 4.2vw, 4.5rem);
   font-weight: 900;
   line-height: 1.1;
   color: var(--gold-100);
@@ -551,25 +562,53 @@ function particleStyle(n) {
   }
 }
 
-@media (max-width: 768px) {
-  .hero__split {
-    flex-direction: column;
+@media (max-width: 900px) {
+  /* En móvil el hero crece de forma natural y fluye en vertical:
+     foto Tchaikovsky → divisor → foto Sabrina → bloque de título */
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    justify-content: flex-start;
   }
+
+  /* El split deja de ser absoluto y pasa al flujo normal */
+  .hero__split {
+    position: relative;
+    inset: auto;
+    flex-direction: column;
+    z-index: 2;
+  }
+
   .hero__panel {
-    height: 38vh;
-    min-height: 220px;
+    height: auto;
+    min-height: 0;
+    padding: 30px 0 10px;
   }
 
   .hero__panel-content,
   .hero__panel-content--right {
-    padding: 30px 20px 20px 20px;
+    padding: 6px 20px;
     align-items: center;
+    text-align: center;
     justify-content: flex-start;
+    gap: 16px;
+  }
+
+  .hero__meta,
+  .hero__meta--right {
+    align-items: center;
+    text-align: center;
   }
 
   .hero__portrait-frame {
-    width: 220px;
-    height: 280px;
+    width: 170px;
+    height: 218px;
+  }
+
+  /* Las viñetas laterales no aplican en columna */
+  .hero__vignette,
+  .hero__vignette--right {
+    display: none;
   }
 
   .hero__quote,
@@ -580,9 +619,9 @@ function particleStyle(n) {
 
   .hero__center-divider {
     width: 100%;
-    height: 2px;
+    height: auto;
     flex-direction: row;
-    padding: 0 60px;
+    padding: 6px 50px;
   }
   .hero__divider-line,
   .hero__divider-line--bottom {
@@ -597,8 +636,11 @@ function particleStyle(n) {
     );
   }
 
+  /* El título fluye debajo de los retratos, con fondo sólido */
   .hero__title-block {
-    padding: 0 16px 40px;
+    position: relative;
+    background: var(--void);
+    padding: 24px 16px 60px;
   }
 
   .hero__title {

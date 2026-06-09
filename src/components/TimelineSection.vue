@@ -8,142 +8,177 @@
       <p class="lead">
         Nueve épocas que trazan el camino desde la sinfonía que reveló el alma humana
         hasta la canción de 15 segundos diseñada para un algoritmo.
+        <br /><span class="timeline-section__hint">Desliza hacia abajo y deja que la historia se revele.</span>
       </p>
     </div>
 
-    <!-- Lista de épocas cargadas desde JSON -->
-    <div v-if="eras.length" class="era-preview stagger">
-      <div
-        v-for="era in eras"
-        :key="era.id"
-        class="era-preview__item"
-        :style="{ '--accent': era.accentColor }"
-      >
-        <span class="era-preview__icon" aria-hidden="true">{{ era.icon }}</span>
-        <span class="era-preview__years">{{ era.yearStart }}–{{ era.yearEnd }}</span>
-        <span class="era-preview__name">{{ era.name }}</span>
-        <span class="era-preview__tagline">{{ era.tagline }}</span>
-      </div>
-    </div>
-
-    <div v-else class="era-preview__loading">
-      <span>Cargando épocas</span>
+    <!-- Estado de carga -->
+    <div v-if="loading" class="timeline-section__loading">
+      <span>Cargando la historia de la música</span>
       <span class="loading-dots">...</span>
     </div>
 
-    <p class="timeline-section__coming-soon reveal">
-      La línea interactiva completa se despliega a continuación ↓
-    </p>
+    <!-- Línea del tiempo con tarjetas alternadas -->
+    <div v-else class="timeline">
+      <div class="timeline__line" aria-hidden="true">
+        <div class="timeline__line-progress" :style="{ height: progress + '%' }"></div>
+      </div>
+
+      <EraCard
+        v-for="(era, i) in eras"
+        :key="era.id"
+        :era="era"
+        :index="i"
+      />
+
+      <!-- Cierre de la línea -->
+      <div class="timeline__end reveal" aria-hidden="true">
+        <span class="timeline__end-dot"></span>
+        <p class="timeline__end-text">¿Y ahora hacia dónde va la música?</p>
+      </div>
+    </div>
 
   </section>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+import EraCard from './EraCard.vue'
 
-const eras = ref([])
+const eras    = ref([])
+const loading = ref(true)
+const progress = ref(0)
+
+let rafId = null
+function onScroll() {
+  const el = document.querySelector('.timeline')
+  if (!el) return
+  const rect = el.getBoundingClientRect()
+  const vh = window.innerHeight
+  const total = rect.height - vh
+  const scrolled = Math.min(Math.max(-rect.top + vh * 0.5, 0), total)
+  progress.value = total > 0 ? (scrolled / total) * 100 : 0
+}
+
+function throttledScroll() {
+  if (rafId) return
+  rafId = requestAnimationFrame(() => {
+    onScroll()
+    rafId = null
+  })
+}
 
 onMounted(async () => {
-  const res  = await fetch('/data/eras.json')
-  const data = await res.json()
-  eras.value = data.eras
+  try {
+    const res  = await fetch('/data/eras.json')
+    const data = await res.json()
+    eras.value = data.eras
+  } catch (e) {
+    console.error('No se pudo cargar eras.json', e)
+  } finally {
+    loading.value = false
+  }
+  window.addEventListener('scroll', throttledScroll, { passive: true })
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', throttledScroll)
+  if (rafId) cancelAnimationFrame(rafId)
 })
 </script>
 
 <style scoped>
 .timeline-section {
-  padding: 0 0 80px;
+  position: relative;
+  padding: 0 24px 60px;
   background: var(--void);
 }
 
-/* Preview list */
-.era-preview {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.era-preview__item {
-  display: grid;
-  grid-template-columns: 40px 120px 1fr auto;
-  align-items: center;
-  gap: 16px;
-  padding: 14px 20px;
-  border-left: 2px solid transparent;
-  border-color: var(--accent, var(--gold-700));
-  background: var(--surface);
-  transition: background 0.3s;
-  cursor: default;
-}
-.era-preview__item:hover {
-  background: var(--card-bg);
-}
-
-.era-preview__icon {
-  font-size: 1.4rem;
-  color: var(--accent, var(--gold-500));
-  text-align: center;
-}
-
-.era-preview__years {
-  font-family: var(--font-classical);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: var(--accent, var(--gold-500));
-  white-space: nowrap;
-}
-
-.era-preview__name {
-  font-family: var(--font-romantic);
-  font-size: 0.95rem;
-  color: var(--txt-bright);
-}
-
-.era-preview__tagline {
-  font-size: 0.75rem;
-  color: var(--txt-dim);
+.timeline-section__hint {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.78rem;
   font-style: italic;
-  text-align: right;
-  max-width: 260px;
+  color: var(--gold-700);
 }
 
-.era-preview__loading {
+.timeline-section__loading {
   text-align: center;
-  padding: 48px;
+  padding: 80px 24px;
   color: var(--txt-muted);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   letter-spacing: 2px;
 }
+.loading-dots { animation: blink 1.2s step-start infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-.loading-dots {
-  animation: blink 1.2s step-start infinite;
-}
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+/* ── Timeline ────────────────────────────────────────── */
+.timeline {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px 0 60px;
 }
 
-.timeline-section__coming-soon {
+/* Línea vertical central */
+.timeline__line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background: var(--border);
+  z-index: 0;
+}
+.timeline__line-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--gold-500),
+    var(--crimson-light),
+    var(--amber-light),
+    var(--electric-glow),
+    var(--purple-glow),
+    var(--pink-glow)
+  );
+  box-shadow: 0 0 12px var(--gold-700);
+  transition: height 0.2s linear;
+}
+
+/* Cierre del timeline */
+.timeline__end {
   text-align: center;
-  margin-top: 48px;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  color: var(--txt-muted);
-  font-family: var(--font-classical);
+  padding-top: 40px;
+  position: relative;
+  z-index: 2;
+}
+.timeline__end-dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--pink-glow);
+  margin: 0 auto 20px;
+  box-shadow: 0 0 20px var(--pink-glow);
+  animation: endPulse 2s ease-in-out infinite;
+}
+@keyframes endPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.4); opacity: 0.6; }
+}
+.timeline__end-text {
+  font-family: var(--font-romantic);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--txt-dim);
 }
 
-/* Responsive */
-@media (max-width: 640px) {
-  .era-preview__item {
-    grid-template-columns: 36px 1fr;
-    grid-template-rows: auto auto;
-  }
-  .era-preview__years { grid-column: 2; }
-  .era-preview__name  { grid-column: 2; }
-  .era-preview__tagline { display: none; }
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 860px) {
+  .timeline__line { left: 22px; transform: none; }
 }
 </style>
