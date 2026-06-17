@@ -131,7 +131,6 @@ function particleStyle(n) {
 </script>
 
 <style scoped>
-/* ── Hero layout ─────────────────────────────────────── */
 .hero {
   position: relative;
   width: 100%;
@@ -145,7 +144,6 @@ function particleStyle(n) {
   justify-content: flex-end;
 }
 
-/* ── Partículas ──────────────────────────────────────── */
 .hero__particles {
   position: absolute;
   inset: 0;
@@ -177,7 +175,6 @@ function particleStyle(n) {
   }
 }
 
-/* ── Paneles ─────────────────────────────────────────── */
 .hero__split {
   position: absolute;
   inset: 0;
@@ -253,7 +250,6 @@ function particleStyle(n) {
   pointer-events: none;
 }
 
-/* ── Contenido interno de cada panel ─────────────────── */
 .hero__panel-content {
   position: relative;
   z-index: 3;

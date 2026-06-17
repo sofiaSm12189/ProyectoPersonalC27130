@@ -1,6 +1,9 @@
 <template>
   <section id="timeline" class="timeline-section" aria-label="Línea del tiempo musical">
 
+    <!-- Video collage de fondo según la época activa -->
+    <EraBackground :era="activeEra" />
+
     <div class="section-header reveal">
       <p class="eyebrow">La Historia</p>
       <h2>Una Línea del Tiempo Musical</h2>
@@ -29,6 +32,7 @@
         :key="era.id"
         :era="era"
         :index="i"
+        @select-song="(song) => openSong(song, era)"
       />
 
       <!-- Cierre de la línea -->
@@ -38,34 +42,71 @@
       </div>
     </div>
 
+    <!-- Modal de canción (info + reproductor) -->
+    <SongModal
+      :song="selectedSong"
+      :era-name="selectedEraName"
+      :accent-color="selectedAccent"
+      @close="selectedSong = null"
+    />
+
   </section>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import EraCard from './EraCard.vue'
+import SongModal from './SongModal.vue'
+import EraBackground from './EraBackground.vue'
 
 const eras    = ref([])
 const loading = ref(true)
 const progress = ref(0)
 
-let rafId = null
-function onScroll() {
-  const el = document.querySelector('.timeline')
-  if (!el) return
-  const rect = el.getBoundingClientRect()
-  const vh = window.innerHeight
-  const total = rect.height - vh
-  const scrolled = Math.min(Math.max(-rect.top + vh * 0.5, 0), total)
-  progress.value = total > 0 ? (scrolled / total) * 100 : 0
+// Época activa según scroll (controla el video de fondo)
+const activeEra = ref(null)
+
+// Canción seleccionada para el modal
+const selectedSong    = ref(null)
+const selectedEraName = ref('')
+const selectedAccent  = ref('#c9a84c')
+
+function openSong(song, era) {
+  selectedSong.value    = song
+  selectedEraName.value = era.name
+  selectedAccent.value  = era.accentColor
 }
 
-function throttledScroll() {
-  if (rafId) return
-  rafId = requestAnimationFrame(() => {
-    onScroll()
-    rafId = null
+// Posiciones cacheadas de cada época (se recalculan en resize)
+let cardRanges = []
+function measureCards() {
+  cardRanges = [...document.querySelectorAll('.timeline .era')].map((c) => {
+    const r = c.getBoundingClientRect()
+    const top = r.top + window.scrollY
+    return { top, bottom: top + r.height }
   })
+}
+
+function onScroll() {
+  const vh = window.innerHeight
+
+  // Barra de progreso de la línea del tiempo
+  const tl = document.querySelector('.timeline')
+  if (tl) {
+    const rect = tl.getBoundingClientRect()
+    const total = rect.height - vh
+    const scrolled = Math.min(Math.max(-rect.top + vh * 0.5, 0), total)
+    progress.value = total > 0 ? (scrolled / total) * 100 : 0
+  }
+
+  // Época cuyo rango contiene el centro del viewport → controla el fondo
+  const centerY = window.scrollY + vh / 2
+  for (let i = 0; i < cardRanges.length; i++) {
+    if (centerY >= cardRanges[i].top && centerY < cardRanges[i].bottom) {
+      if (activeEra.value !== eras.value[i]) activeEra.value = eras.value[i]
+      return
+    }
+  }
 }
 
 onMounted(async () => {
@@ -78,12 +119,16 @@ onMounted(async () => {
   } finally {
     loading.value = false
   }
-  window.addEventListener('scroll', throttledScroll, { passive: true })
+  await nextTick()
+  measureCards()
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('resize', measureCards)
 })
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', throttledScroll)
-  if (rafId) cancelAnimationFrame(rafId)
+  window.removeEventListener('scroll', onScroll)
+  window.removeEventListener('resize', measureCards)
 })
 </script>
 
@@ -91,7 +136,16 @@ onUnmounted(() => {
 .timeline-section {
   position: relative;
   padding: 0 24px 60px;
-  background: var(--void);
+  /* Fondo transparente para dejar ver el video collage de cada época */
+  background: transparent;
+}
+
+/* El contenido va por encima del fondo */
+.timeline-section > .section-header,
+.timeline-section > .timeline,
+.timeline-section > .timeline-section__loading {
+  position: relative;
+  z-index: 1;
 }
 
 .timeline-section__hint {

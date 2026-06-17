@@ -4,6 +4,12 @@
   "eras": [
     {
       "id": "clasicismo-tardio",
+      "videoSrc": "/video/era-clasicismo.mp4",
+      "brain": {
+        "regions": ["prefrontal", "parietal"],
+        "label": "Corteza prefrontal · Lóbulo parietal",
+        "effect": "La estructura matemática de la forma sonata activa el razonamiento abstracto (corteza prefrontal) y el procesamiento espacial (lóbulo parietal): las mismas áreas que usamos para resolver matemáticas."
+      },
       "yearStart": 1800,
       "yearEnd": 1830,
       "name": "El Clasicismo Tardío",
@@ -28,6 +34,7 @@
           "year": 1824,
           "youtubeSearch": "Beethoven Symphony No 9 Ode to Joy Karajan",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Compuesta cuando Beethoven era completamente sordo. Al terminar el estreno se giró para ver los aplausos que no podía escuchar. El mayor acto de fe en el poder creador humano."
         },
         {
@@ -36,6 +43,7 @@
           "year": 1801,
           "youtubeSearch": "Beethoven Moonlight Sonata Barenboim",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Redefinió la forma de la sonata y abrió la puerta al Romanticismo musical."
         },
         {
@@ -44,6 +52,7 @@
           "year": 1822,
           "youtubeSearch": "Schubert Symphony No 8 Unfinished Abbado",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "La obra 'incompleta' más perfecta de la historia. Dos movimientos que valen por una sinfonía completa."
         },
         {
@@ -52,6 +61,7 @@
           "year": 1825,
           "youtubeSearch": "Schubert Ave Maria Netrebko",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Una de las melodías más reconocidas del mundo. La pureza hecha música."
         }
       ],
@@ -68,6 +78,12 @@
     },
     {
       "id": "romanticismo",
+      "videoSrc": "/video/era-romanticismo.mp4",
+      "brain": {
+        "regions": ["limbic"],
+        "label": "Sistema límbico · Amígdala",
+        "effect": "La intensidad emocional del Romanticismo activa el sistema límbico y la amígdala, el centro donde el cerebro procesa los sentimientos más profundos. Por eso Chopin nos hace sentir melancolía sin una sola palabra."
+      },
       "yearStart": 1830,
       "yearEnd": 1880,
       "name": "El Gran Romanticismo",
@@ -92,6 +108,7 @@
           "year": 1832,
           "youtubeSearch": "Chopin Nocturne Op 9 No 2 Rubinstein",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "La pieza más íntima de la historia. Cada nota es una confesión."
         },
         {
@@ -100,6 +117,7 @@
           "year": 1847,
           "youtubeSearch": "Liszt Hungarian Rhapsody No 2 Horowitz",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Liszt transformó el piano en una orquesta entera. Ningún pianista antes había hecho esto."
         },
         {
@@ -108,6 +126,7 @@
           "year": 1853,
           "youtubeSearch": "Verdi La Traviata Brindisi Domingo",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Opera que hablaba de amor, muerte y sociedad. Verdi era la banda sonora de Italia."
         },
         {
@@ -116,6 +135,7 @@
           "year": 1885,
           "youtubeSearch": "Brahms Symphony No 4 Carlos Kleiber",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "La síntesis perfecta entre el rigor clásico y la pasión romántica."
         },
         {
@@ -124,6 +144,7 @@
           "year": 1865,
           "youtubeSearch": "Wagner Tristan und Isolde Prelude Karajan",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "El acorde de Tristán cambió la música occidental para siempre. Inicio de la armonía moderna."
         }
       ],
@@ -140,6 +161,12 @@
     },
     {
       "id": "post-romanticismo",
+      "videoSrc": "/video/era-postromanticismo.mp4",
+      "brain": {
+        "regions": ["temporal", "occipital"],
+        "label": "Corteza auditiva · Corteza visual",
+        "effect": "La música programática de Tchaikovsky genera imágenes mentales: conecta la corteza auditiva con la corteza visual (occipital), creando una sinestesia sonora donde 'vemos' el lago de los cisnes."
+      },
       "yearStart": 1880,
       "yearEnd": 1920,
       "name": "Post-Romanticismo e Impresionismo",
@@ -164,6 +191,7 @@
           "year": 1876,
           "youtubeSearch": "Tchaikovsky Swan Lake Ballet Bolshoi full",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "El ballet más famoso de la historia. Tchaikovsky elevó la música de ballet al nivel de la sinfonía."
         },
         {
@@ -172,6 +200,7 @@
           "year": 1905,
           "youtubeSearch": "Debussy Clair de Lune Zimerman",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "No describe la luna: es la luna. La mayor obra del impresionismo musical."
         },
         {
@@ -180,6 +209,7 @@
           "year": 1904,
           "youtubeSearch": "Mahler Symphony No 5 Bernstein",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "El Adagietto de esta sinfonía es una de las páginas más hermosas jamás escritas."
         },
         {
@@ -188,6 +218,7 @@
           "year": 1893,
           "youtubeSearch": "Dvorak New World Symphony Karajan",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Dvořák tomó melodías afroamericanas y nativas y las convirtió en música universal."
         }
       ],
@@ -204,6 +235,12 @@
     },
     {
       "id": "jazz-blues",
+      "videoSrc": "/video/era-jazz.mp4",
+      "brain": {
+        "regions": ["prefrontal", "broca"],
+        "label": "Corteza prefrontal medial · Área de Broca",
+        "effect": "Durante la improvisación, el cerebro desactiva la autocensura y activa la corteza prefrontal medial junto a las áreas del lenguaje (Broca): el músico de jazz 'habla' espontáneamente con su instrumento, igual que conversamos."
+      },
       "yearStart": 1920,
       "yearEnd": 1950,
       "name": "Jazz, Blues & Soul",
@@ -228,6 +265,7 @@
           "year": 1967,
           "youtubeSearch": "Louis Armstrong What a Wonderful World original",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Grabada durante el movimiento por los derechos civiles, es un acto de esperanza radical."
         },
         {
@@ -236,6 +274,7 @@
           "year": 1941,
           "youtubeSearch": "Duke Ellington Take the A Train original recording",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "El tema oficial de la orquesta de Ellington. El jazz en estado puro."
         },
         {
@@ -244,6 +283,7 @@
           "year": 1939,
           "youtubeSearch": "Billie Holiday Strange Fruit original 1939",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "La primera gran canción de protesta de la historia. Un poema sobre el racismo que ninguna radio quería tocar."
         },
         {
@@ -252,6 +292,7 @@
           "year": 1944,
           "youtubeSearch": "Thelonious Monk Round Midnight original",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "El jazz se vuelve introspectivo. La música como confesionario."
         },
         {
@@ -260,6 +301,7 @@
           "year": 1959,
           "youtubeSearch": "Miles Davis Kind of Blue So What",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Del álbum Kind of Blue, el más vendido de la historia del jazz. La melancolía elevada a arte."
         }
       ],
@@ -276,6 +318,12 @@
     },
     {
       "id": "rock-soul",
+      "videoSrc": "/video/era-rocksoul.mp4",
+      "brain": {
+        "regions": ["motor", "cerebellum"],
+        "label": "Corteza motora · Cerebelo",
+        "effect": "El ritmo del rock activa la corteza motora y el cerebelo, los sistemas del movimiento. Por eso es físicamente difícil quedarse quieto: el cuerpo responde al beat antes de que la mente lo decida."
+      },
       "yearStart": 1950,
       "yearEnd": 1970,
       "name": "Rock & Roll y el Alma",
@@ -300,6 +348,7 @@
           "year": 1958,
           "youtubeSearch": "Chuck Berry Johnny B Goode original",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "La primera gran canción de rock and roll. La NASA la incluyó en la Voyager Golden Record enviada al espacio."
         },
         {
@@ -308,6 +357,7 @@
           "year": 1968,
           "youtubeSearch": "The Beatles Hey Jude official",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "7 minutos de pura catarsis colectiva. El 'na na na' final lo cantaron 300 millones de personas en simultáneo."
         },
         {
@@ -316,6 +366,7 @@
           "year": 1967,
           "youtubeSearch": "Jimi Hendrix Purple Haze original",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Hendrix redefinió lo que una guitarra eléctrica podía hacer. Un instrumento diferente en sus manos."
         },
         {
@@ -324,6 +375,7 @@
           "year": 1965,
           "youtubeSearch": "Rolling Stones Satisfaction original",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "El riff más famoso de la historia. La insatisfacción como identidad generacional."
         },
         {
@@ -332,6 +384,7 @@
           "year": 1965,
           "youtubeSearch": "James Brown I Feel Good original",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "El Padrino del Soul. James Brown inventó el funk y es el abuelo del hip-hop."
         }
       ],
@@ -348,6 +401,12 @@
     },
     {
       "id": "rock-clasico",
+      "videoSrc": "/video/era-rockclasico.mp4",
+      "brain": {
+        "regions": ["hippocampus", "temporal"],
+        "label": "Hipocampo · Corteza auditiva",
+        "effect": "Los álbumes conceptuales exigen escucha profunda y sostenida, activando el hipocampo (memoria) para conectar más de 40 minutos de música como una sola narrativa coherente. Es como leer una novela en lugar de un tuit."
+      },
       "yearStart": 1970,
       "yearEnd": 1990,
       "name": "Rock Clásico, Disco y Pop",
@@ -372,6 +431,7 @@
           "year": 1975,
           "youtubeSearch": "Queen Bohemian Rhapsody official video",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "6 minutos que cambiaron la radio. Ópera, balada y rock duro en una misma canción. Nadie sabía que eso era posible."
         },
         {
@@ -380,6 +440,7 @@
           "year": 1971,
           "youtubeSearch": "Led Zeppelin Stairway to Heaven original",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "La canción más radiada de la historia del rock clásico. Un viaje en 8 minutos."
         },
         {
@@ -388,6 +449,7 @@
           "year": 1982,
           "youtubeSearch": "Michael Jackson Thriller official video",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "El videoclip más visto de la historia. MJ convirtió el pop en espectáculo total."
         },
         {
@@ -396,6 +458,7 @@
           "year": 1979,
           "youtubeSearch": "Pink Floyd Another Brick in the Wall official",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Una crítica al sistema educativo que se convirtió en himno generacional mundial."
         },
         {
@@ -404,6 +467,7 @@
           "year": 1977,
           "youtubeSearch": "David Bowie Heroes official",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Grabada junto al Muro de Berlín. Una de las canciones más emocionantes jamás escritas."
         }
       ],
@@ -420,6 +484,12 @@
     },
     {
       "id": "pop-grunge-hiphop",
+      "videoSrc": "/video/era-grunge.mp4",
+      "brain": {
+        "regions": ["limbic", "broca"],
+        "label": "Amígdala · Áreas del lenguaje",
+        "effect": "El hip-hop combina la carga emocional de la amígdala con el procesamiento lingüístico de las áreas del lenguaje: estudios confirman que el rap activa los mismos circuitos cerebrales que la poesía formal."
+      },
       "yearStart": 1990,
       "yearEnd": 2005,
       "name": "Pop, Grunge y Hip-Hop",
@@ -444,6 +514,7 @@
           "year": 1991,
           "youtubeSearch": "Nirvana Smells Like Teen Spirit official",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "El grito de una generación. Kurt Cobain quería hacer una canción que sonara al peor pop. Accidentalmente inventó el grunge."
         },
         {
@@ -452,6 +523,7 @@
           "year": 1992,
           "youtubeSearch": "Tupac Changes official video",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Poesía urbana sobre raza, pobreza y esperanza. Sigue siendo tan relevante hoy como hace 30 años."
         },
         {
@@ -460,6 +532,7 @@
           "year": 1992,
           "youtubeSearch": "Whitney Houston I Will Always Love You official",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Considerada la mejor interpretación vocal pop de todos los tiempos. La voz humana como instrumento supremo."
         },
         {
@@ -468,6 +541,7 @@
           "year": 2002,
           "youtubeSearch": "Eminem Lose Yourself official",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Primera canción de hip-hop en ganar el Óscar. El rap como narrativa cinematográfica."
         },
         {
@@ -476,6 +550,7 @@
           "year": 1998,
           "youtubeSearch": "Madonna Ray of Light official",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Madonna fusionó electrónica con pop y espiritualidad. Anticipó el dance-pop de los 2000."
         }
       ],
@@ -492,6 +567,12 @@
     },
     {
       "id": "pop-digital",
+      "videoSrc": "/video/era-popdigital.mp4",
+      "brain": {
+        "regions": ["accumbens"],
+        "label": "Núcleo accumbens",
+        "effect": "El gancho pegadizo del pop digital estimula el núcleo accumbens, liberando dopamina anticipada: el cerebro 'predice' el placer del estribillo antes de que llegue, y esa expectativa es parte del disfrute."
+      },
       "yearStart": 2005,
       "yearEnd": 2016,
       "name": "Pop Digital e Indie",
@@ -516,6 +597,7 @@
           "year": 2010,
           "youtubeSearch": "Adele Rolling in the Deep official",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "En la era del autotune, Adele demostró que una voz real y honesta sigue siendo imparable."
         },
         {
@@ -524,6 +606,7 @@
           "year": 2006,
           "youtubeSearch": "Amy Winehouse Rehab official video",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Amy rechazó la rehabilitación en una canción y el mundo aplaudió. Su tragedia y su genio son inseparables."
         },
         {
@@ -532,6 +615,7 @@
           "year": 2003,
           "youtubeSearch": "Beyonce Crazy in Love official",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Beyoncé definió el R&B del siglo XXI. Músico, performer y productora en una sola persona."
         },
         {
@@ -540,6 +624,7 @@
           "year": 1992,
           "youtubeSearch": "Radiohead Creep official video",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "La canción del inadaptado que se volvió himno de todos los inadaptados del mundo."
         },
         {
@@ -548,6 +633,7 @@
           "year": 2008,
           "youtubeSearch": "Lady Gaga Poker Face official",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Gaga mezcló arte conceptual con pop de pista de baile. Probó que lo excéntrico puede ser masivo."
         }
       ],
@@ -564,6 +650,12 @@
     },
     {
       "id": "era-algoritmo",
+      "videoSrc": "/video/era-algoritmo.mp4",
+      "brain": {
+        "regions": ["accumbens"],
+        "label": "Núcleo accumbens · Circuito de dopamina",
+        "effect": "La música algorítmica explota directamente el núcleo accumbens con recompensas cada pocos segundos: el mismo circuito de dopamina que activan la comida y las redes sociales. Placer instantáneo diseñado para que nunca dejes de scrollear, pero sin profundidad."
+      },
       "yearStart": 2016,
       "yearEnd": 2024,
       "name": "La Era del Algoritmo",
@@ -588,6 +680,7 @@
           "year": 2019,
           "youtubeSearch": "Billie Eilish bad guy official video",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Billie grabó su primer álbum en su cuarto con su hermano. Prueba de que la democratización tecnológica también puede producir arte genuino."
         },
         {
@@ -596,6 +689,7 @@
           "year": 2019,
           "youtubeSearch": "The Weeknd Blinding Lights official",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "La canción más escuchada de la historia de Spotify. Nostalgia ochentera empaquetada en producción digital perfecta."
         },
         {
@@ -604,6 +698,7 @@
           "year": 2024,
           "youtubeSearch": "Sabrina Carpenter Espresso official video",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "El hit del verano 2024. Catchy, producido algorítmicamente, diseñado para TikTok. Tiene todo excepto profundidad."
         },
         {
@@ -612,6 +707,7 @@
           "year": 2022,
           "youtubeSearch": "Bad Bunny El Apagon",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Un momento de genuina conciencia política en la era del algoritmo. Excepción que confirma la regla."
         },
         {
@@ -620,6 +716,7 @@
           "year": 2021,
           "youtubeSearch": "Olivia Rodrigo drivers license official",
           "youtubeId": "",
+          "audioSrc": "",
           "significance": "Viralizó en TikTok antes de ser lanzada oficialmente. El nuevo ciclo de vida de una canción."
         }
       ],
@@ -644,22 +741,40 @@
   ],
   "academicReferences": [
     {
-      "id": "ref-koelsch-2011",
-      "title": "Music and the brain: The neuroscience of music",
-      "author": "Stefan Koelsch",
-      "year": 2011,
-      "publication": "Nature Reviews Neuroscience",
-      "url": "https://www.nature.com/articles/nrn3088",
-      "summary": "Revisión exhaustiva de cómo la música activa múltiples regiones cerebrales simultáneamente, incluyendo procesamiento emocional, motor, lingüístico y de memoria."
+      "id": "ref-habibi-2025",
+      "title": "Longitudinal Effects of Continuous Music Training on Cognitive Development: Evidence From the ABCD Study",
+      "author": "Assal Habibi et al.",
+      "year": 2025,
+      "publication": "Annals of the New York Academy of Sciences",
+      "url": "https://nyaspubs.onlinelibrary.wiley.com/doi/10.1111/nyas.70086",
+      "summary": "Datos longitudinales del estudio ABCD: los niños que practicaron música durante 2 años mostraron mayores avances en tareas cognitivas y de lenguaje, especialmente en vocabulario."
     },
     {
-      "id": "ref-schellenberg-2004",
-      "title": "Music Lessons Enhance IQ",
-      "author": "E. Glenn Schellenberg",
-      "year": 2004,
-      "publication": "Psychological Science",
-      "url": "https://journals.sagepub.com/doi/10.1111/j.0956-7976.2004.00711.x",
-      "summary": "Estudio con 144 niños de 6 años: los que recibieron lecciones de música tuvieron aumentos significativos en CI comparados con el grupo control."
+      "id": "ref-cai-2025",
+      "title": "Boosting executive function in children aged 3–12 through musical training: a three-level meta-analysis",
+      "author": "Yumeng Cai, Dan Kang & Xiwu Xu",
+      "year": 2025,
+      "publication": "Frontiers in Psychology",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1659927/full",
+      "summary": "Meta-análisis de 46 estudios (3.530 participantes): el entrenamiento musical mejora de forma significativa la función ejecutiva infantil (memoria de trabajo y control inhibitorio)."
+    },
+    {
+      "id": "ref-zaatar-2023",
+      "title": "The transformative power of music: Insights into neuroplasticity, health, and disease",
+      "author": "Muriel T. Zaatar et al.",
+      "year": 2023,
+      "publication": "Brain, Behavior, & Immunity - Health",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10765015/",
+      "summary": "Revisión reciente sobre cómo la música induce neuroplasticidad: reorganiza conexiones cerebrales y se usa terapéuticamente en depresión, Parkinson y demencia."
+    },
+    {
+      "id": "ref-gold-2023",
+      "title": "Auditory and reward structures reflect the pleasure of musical expectancies during naturalistic listening",
+      "author": "Gold et al.",
+      "year": 2023,
+      "publication": "Frontiers in Neuroscience",
+      "url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1209398/full",
+      "summary": "La corteza auditiva y el sistema de recompensa trabajan juntos: el placer musical nace de la tensión entre lo que esperamos oír y lo que realmente suena."
     },
     {
       "id": "ref-salimpoor-2011",
@@ -668,7 +783,7 @@
       "year": 2011,
       "publication": "Nature Neuroscience",
       "url": "https://www.nature.com/articles/nn.2726",
-      "summary": "Primera evidencia de que la música libera dopamina en el núcleo accumbens, el mismo circuito del placer activado por comida y sexo."
+      "summary": "Evidencia pionera de que la música libera dopamina en el núcleo accumbens, el mismo circuito del placer activado por la comida. La base del argumento de la era del algoritmo."
     },
     {
       "id": "ref-limb-2008",
@@ -677,16 +792,7 @@
       "year": 2008,
       "publication": "PLOS ONE",
       "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0001679",
-      "summary": "Durante la improvisación de jazz, se activa la misma región del cerebro que durante el habla espontánea, sugiriendo que la música es un lenguaje cognitivo real."
-    },
-    {
-      "id": "ref-kraus-2010",
-      "title": "Music training for the development of auditory skills",
-      "author": "Nina Kraus & Bharath Chandrasekaran",
-      "year": 2010,
-      "publication": "Nature Reviews Neuroscience",
-      "url": "https://www.nature.com/articles/nrn2882",
-      "summary": "El entrenamiento musical genera cambios estructurales en el cerebro: mayor materia gris auditiva, mejora en discriminación de sonidos del habla y memoria de trabajo."
+      "summary": "Durante la improvisación de jazz se activa la misma región cerebral que durante el habla espontánea, sugiriendo que la música es un lenguaje cognitivo real."
     },
     {
       "id": "ref-levitin-2006",
@@ -704,7 +810,7 @@
       "year": 2015,
       "publication": "Royal Society Open Science",
       "url": "https://royalsocietypublishing.org/doi/10.1098/rsos.150081",
-      "summary": "Análisis cuantitativo de 17,000 canciones del Billboard Hot 100. Demuestra la pérdida progresiva de diversidad armónica y el incremento de la repetición en el pop contemporáneo."
+      "summary": "Análisis cuantitativo de 17.000 canciones del Billboard Hot 100. Demuestra la pérdida progresiva de diversidad armónica y el aumento de la repetición en el pop contemporáneo."
     }
   ]
 }

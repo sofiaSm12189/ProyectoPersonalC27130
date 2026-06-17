@@ -14,6 +14,16 @@
     <!-- Conector del nodo a la tarjeta -->
     <div class="era__connector" aria-hidden="true"></div>
 
+    <!-- Cerebro: aparece en el lado opuesto a la tarjeta -->
+    <aside v-if="era.brain" class="era__brain-wrap">
+      <BrainDiagram
+        :regions="era.brain.regions"
+        :label="era.brain.label"
+        :accent-color="era.accentColor"
+      />
+      <p class="era__brain-effect">{{ era.brain.effect }}</p>
+    </aside>
+
     <!-- Tarjeta de contenido -->
     <div class="era__card">
       <header class="era__header">
@@ -51,7 +61,15 @@
           Canciones que definieron la época
         </h4>
         <ol class="era__song-list">
-          <li v-for="(s, i) in era.songs" :key="i" class="era__song">
+          <li
+            v-for="(s, i) in era.songs"
+            :key="i"
+            class="era__song"
+            role="button"
+            tabindex="0"
+            @click="$emit('select-song', s)"
+            @keydown.enter="$emit('select-song', s)"
+          >
             <div class="era__song-num">{{ String(i + 1).padStart(2, '0') }}</div>
             <div class="era__song-body">
               <div class="era__song-head">
@@ -59,10 +77,13 @@
                 <span class="era__song-year">{{ s.year }}</span>
               </div>
               <span class="era__song-artist">{{ s.artist }}</span>
-              <p class="era__song-sig">{{ s.significance }}</p>
             </div>
+            <span class="era__song-play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+            </span>
           </li>
         </ol>
+        <p class="era__song-hint">Haz clic en una canción para escucharla y leer su historia</p>
       </div>
     </div>
   </article>
@@ -70,11 +91,14 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import BrainDiagram from './BrainDiagram.vue'
 
 const props = defineProps({
   era:   { type: Object, required: true },
   index: { type: Number, default: 0 },
 })
+
+defineEmits(['select-song'])
 
 const rootEl  = ref(null)
 const visible = ref(false)
@@ -105,7 +129,7 @@ onUnmounted(() => observer && observer.disconnect())
   width: 100%;
   max-width: 1180px;
   margin: 0 auto;
-  padding: 46px 0;
+  padding: 80px 0;
   box-sizing: border-box;
 }
 .era--left  { justify-content: flex-start; }
@@ -173,6 +197,32 @@ onUnmounted(() => observer && observer.disconnect())
 .era--left  .era__connector { right: 50%; transform: scaleX(-1); }
 .era--right .era__connector { left: 50%; }
 .era.is-visible .era__connector { opacity: 0.5; }
+
+/* ── Cerebro en el lado opuesto a la tarjeta ── */
+.era__brain-wrap {
+  position: absolute;
+  top: 70px;
+  width: 42%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  opacity: 0;
+  transition: opacity 1s var(--ease-expo) 0.2s,
+    transform 1s var(--ease-expo) 0.2s;
+}
+.era--left  .era__brain-wrap { right: 0; transform: translateX(50px); }
+.era--right .era__brain-wrap { left: 0;  transform: translateX(-50px); }
+.era.is-visible .era__brain-wrap { opacity: 1; transform: translateX(0); }
+
+.era__brain-effect {
+  font-size: 0.82rem;
+  line-height: 1.75;
+  color: var(--txt-dim);
+  text-align: center;
+  max-width: 300px;
+  font-style: italic;
+}
 
 /* ── Tarjeta ─────────────────────────────────────────── */
 .era__card {
@@ -343,11 +393,52 @@ onUnmounted(() => observer && observer.disconnect())
 
 .era__song {
   display: flex;
+  align-items: center;
   gap: 14px;
-  padding-bottom: 14px;
+  padding: 11px 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, padding-left 0.3s;
 }
-.era__song:last-child { border-bottom: none; padding-bottom: 0; }
+.era__song:last-child { border-bottom: none; }
+.era__song:hover,
+.era__song:focus-visible {
+  background: rgba(255, 255, 255, 0.03);
+  padding-left: 14px;
+  outline: none;
+}
+.era__song:hover .era__song-name,
+.era__song:focus-visible .era__song-name { color: var(--accent); }
+.era__song:hover .era__song-play,
+.era__song:focus-visible .era__song-play {
+  opacity: 1;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Botón de play de cada canción */
+.era__song-play {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--txt-dim);
+  opacity: 0.5;
+  transition: opacity 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.era__song-hint {
+  margin-top: 16px;
+  font-size: 0.72rem;
+  color: var(--txt-muted);
+  font-style: italic;
+  text-align: center;
+}
 
 .era__song-num {
   font-family: var(--font-classical);
@@ -397,6 +488,8 @@ onUnmounted(() => observer && observer.disconnect())
   .era,
   .era--left,
   .era--right {
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-start;
     padding: 28px 0 28px 0;
   }
@@ -404,6 +497,21 @@ onUnmounted(() => observer && observer.disconnect())
   .era__node { left: 22px; top: 40px; }
 
   .era__connector { display: none; }
+
+  /* El cerebro fluye arriba de la tarjeta en móvil */
+  .era__brain-wrap,
+  .era--left .era__brain-wrap,
+  .era--right .era__brain-wrap {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 0 26px 56px;
+    transform: translateY(30px);
+  }
+  .era.is-visible .era__brain-wrap { transform: translateY(0); }
 
   .era__card {
     width: 100%;
