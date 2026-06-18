@@ -5,10 +5,7 @@
     {
       "id": "clasicismo-tardio",
       "brain": {
-        "regions": [
-          "prefrontal",
-          "parietal"
-        ],
+        "regions": ["prefrontal", "parietal"],
         "label": "Corteza prefrontal · Lóbulo parietal",
         "effect": "La estructura matemática de la forma sonata activa el razonamiento abstracto (corteza prefrontal) y el procesamiento espacial (lóbulo parietal): las mismas áreas que usamos para resolver matemáticas."
       },
@@ -94,9 +91,7 @@
     {
       "id": "romanticismo",
       "brain": {
-        "regions": [
-          "limbic"
-        ],
+        "regions": ["limbic"],
         "label": "Sistema límbico · Amígdala",
         "effect": "La intensidad emocional del Romanticismo activa el sistema límbico y la amígdala, el centro donde el cerebro procesa los sentimientos más profundos. Por eso Chopin nos hace sentir melancolía sin una sola palabra."
       },
@@ -195,10 +190,7 @@
     {
       "id": "post-romanticismo",
       "brain": {
-        "regions": [
-          "temporal",
-          "occipital"
-        ],
+        "regions": ["temporal", "occipital"],
         "label": "Corteza auditiva · Corteza visual",
         "effect": "La música programática de Tchaikovsky genera imágenes mentales: conecta la corteza auditiva con la corteza visual (occipital), creando una sinestesia sonora donde 'vemos' el lago de los cisnes."
       },
@@ -285,10 +277,7 @@
     {
       "id": "jazz-blues",
       "brain": {
-        "regions": [
-          "prefrontal",
-          "broca"
-        ],
+        "regions": ["prefrontal", "broca"],
         "label": "Corteza prefrontal medial · Área de Broca",
         "effect": "Durante la improvisación, el cerebro desactiva la autocensura y activa la corteza prefrontal medial junto a las áreas del lenguaje (Broca): el músico de jazz 'habla' espontáneamente con su instrumento, igual que conversamos."
       },
@@ -387,10 +376,7 @@
     {
       "id": "rock-soul",
       "brain": {
-        "regions": [
-          "motor",
-          "cerebellum"
-        ],
+        "regions": ["motor", "cerebellum"],
         "label": "Corteza motora · Cerebelo",
         "effect": "El ritmo del rock activa la corteza motora y el cerebelo, los sistemas del movimiento. Por eso es físicamente difícil quedarse quieto: el cuerpo responde al beat antes de que la mente lo decida."
       },
@@ -489,10 +475,7 @@
     {
       "id": "rock-clasico",
       "brain": {
-        "regions": [
-          "hippocampus",
-          "temporal"
-        ],
+        "regions": ["hippocampus", "temporal"],
         "label": "Hipocampo · Corteza auditiva",
         "effect": "Los álbumes conceptuales exigen escucha profunda y sostenida, activando el hipocampo (memoria) para conectar más de 40 minutos de música como una sola narrativa coherente. Es como leer una novela en lugar de un tuit."
       },
@@ -591,10 +574,7 @@
     {
       "id": "pop-grunge-hiphop",
       "brain": {
-        "regions": [
-          "limbic",
-          "broca"
-        ],
+        "regions": ["limbic", "broca"],
         "label": "Amígdala · Áreas del lenguaje",
         "effect": "El hip-hop combina la carga emocional de la amígdala con el procesamiento lingüístico de las áreas del lenguaje: estudios confirman que el rap activa los mismos circuitos cerebrales que la poesía formal."
       },
@@ -693,9 +673,7 @@
     {
       "id": "pop-digital",
       "brain": {
-        "regions": [
-          "accumbens"
-        ],
+        "regions": ["accumbens"],
         "label": "Núcleo accumbens",
         "effect": "El gancho pegadizo del pop digital estimula el núcleo accumbens, liberando dopamina anticipada: el cerebro 'predice' el placer del estribillo antes de que llegue, y esa expectativa es parte del disfrute."
       },
@@ -795,9 +773,7 @@
     {
       "id": "era-algoritmo",
       "brain": {
-        "regions": [
-          "accumbens"
-        ],
+        "regions": ["accumbens"],
         "label": "Núcleo accumbens · Circuito de dopamina",
         "effect": "La música algorítmica explota directamente el núcleo accumbens con recompensas cada pocos segundos: el mismo circuito de dopamina que activan la comida y las redes sociales. Placer instantáneo diseñado para que nunca dejes de scrollear, pero sin profundidad."
       },
