@@ -25,16 +25,34 @@
         Sube una imagen de cerebro a<br /><code>public/images/brain.webp</code>
       </p>
 
-      <div
-        v-for="r in allRegions"
-        :key="r.key"
-        class="brain__zone"
-        :class="{ active: isActive(r.key) }"
-        :style="{ left: r.x + '%', top: r.y + '%' }"
+      <!-- Capa SVG interactiva: cada zona es un círculo clickeable -->
+      <svg
+        class="brain__overlay"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
       >
-        <span class="brain__zone-glow"></span>
-        <span class="brain__zone-dot"></span>
-      </div>
+        <defs>
+          <radialGradient :id="`halo-${uid}`" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" :stop-color="accentColor" stop-opacity="0.85" />
+            <stop offset="100%" :stop-color="accentColor" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+        <g
+          v-for="r in allRegions"
+          :key="r.key"
+          class="brain__zone"
+          :class="{ active: isActive(r.key), selected: selected === r.key }"
+          role="button"
+          tabindex="0"
+          :aria-label="r.label"
+          @click="select(r.key)"
+          @keydown.enter="select(r.key)"
+        >
+          <circle class="brain__zone-halo" :cx="r.x" :cy="r.y" r="9" :fill="`url(#halo-${uid})`" />
+          <circle class="brain__zone-hit" :cx="r.x" :cy="r.y" r="8" />
+          <circle class="brain__zone-dot" :cx="r.x" :cy="r.y" r="1.3" />
+        </g>
+      </svg>
     </div>
 
     <figcaption class="brain__caption">
@@ -42,6 +60,15 @@
       {{ label }}
     </figcaption>
 
+    <p class="brain__hint">Haz clic en las zonas del cerebro para explorarlas</p>
+
+    <!-- Región seleccionada al hacer clic -->
+    <div v-if="selectedRegion" class="brain__selected">
+      <span class="brain__selected-name">{{ selectedRegion.label }}</span>
+      <span class="brain__selected-fn">{{ selectedRegion.fn }}</span>
+    </div>
+
+    <!-- Regiones que activa esta época -->
     <ul class="brain__legend">
       <li v-for="r in activeRegionData" :key="r.key" class="brain__legend-item">
         <span class="brain__legend-name">{{ r.label }}</span>
@@ -62,6 +89,7 @@ const props = defineProps({
 
 const brainImg = '/images/brain.webp'
 const imgFailed = ref(false)
+const uid = Math.random().toString(36).slice(2, 8)
 
 const allRegions = [
   { key: 'prefrontal', x: 15, y: 42, label: 'Corteza prefrontal', fn: 'Razonamiento, planificación y análisis' },
@@ -75,6 +103,14 @@ const allRegions = [
   { key: 'accumbens', x: 36, y: 54, label: 'Núcleo accumbens', fn: 'Placer y recompensa (dopamina)' },
   { key: 'cerebellum', x: 71, y: 75, label: 'Cerebelo', fn: 'Coordinación y sentido del compás' },
 ]
+
+const selected = ref(null)
+function select(key) {
+  selected.value = selected.value === key ? null : key
+}
+const selectedRegion = computed(() =>
+  allRegions.find((r) => r.key === selected.value)
+)
 
 function isActive(region) {
   return props.regions.includes(region)
@@ -91,7 +127,7 @@ const activeRegionData = computed(() =>
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   width: 100%;
   max-width: 380px;
 }
@@ -140,53 +176,55 @@ const activeRegionData = computed(() =>
   font-size: 0.68rem;
 }
 
+/* Capa SVG interactiva */
+.brain__overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
 .brain__zone {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
+  cursor: pointer;
+  outline: none;
 }
-
+.brain__zone-hit { fill: transparent; }
 .brain__zone-dot {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--txt-dim);
-  opacity: 0.3;
-  transition: all 0.5s ease;
+  fill: var(--txt-dim);
+  opacity: 0.4;
+  transition: fill 0.4s, opacity 0.4s;
 }
-.brain__zone-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+.brain__zone-halo {
   opacity: 0;
-  transition: opacity 0.6s ease, width 0.6s ease, height 0.6s ease;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity 0.5s ease;
 }
 
-.brain__zone.active .brain__zone-dot {
-  width: 9px;
-  height: 9px;
-  background: var(--accent);
+.brain__zone:hover .brain__zone-dot,
+.brain__zone:focus-visible .brain__zone-dot {
+  fill: var(--accent);
   opacity: 1;
-  box-shadow: 0 0 10px var(--accent);
 }
-.brain__zone.active .brain__zone-glow {
-  width: 78px;
-  height: 78px;
-  opacity: 0.6;
+.brain__zone:hover .brain__zone-halo {
+  opacity: 0.35;
+}
+
+.brain__zone.active .brain__zone-dot,
+.brain__zone.selected .brain__zone-dot {
+  fill: var(--accent);
+  opacity: 1;
+}
+.brain__zone.active .brain__zone-halo {
+  opacity: 0.55;
   animation: zonePulse 2.4s ease-in-out infinite;
 }
+.brain__zone.selected .brain__zone-halo {
+  opacity: 0.8;
+  animation: zonePulse 1.6s ease-in-out infinite;
+}
 @keyframes zonePulse {
-  0%, 100% { opacity: 0.42; transform: translate(-50%, -50%) scale(0.9); }
-  50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.1); }
+  0%, 100% { transform: scale(0.85); }
+  50%       { transform: scale(1.12); }
 }
 
 .brain__caption {
@@ -212,12 +250,40 @@ const activeRegionData = computed(() =>
 }
 @keyframes dotPulse {
   0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.5); opacity: 0.5; }
+  50%       { transform: scale(1.5); opacity: 0.5; }
+}
+
+.brain__hint {
+  font-size: 0.68rem;
+  color: var(--txt-muted);
+  font-style: italic;
+  text-align: center;
+}
+
+.brain__selected {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.025);
+}
+.brain__selected-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.brain__selected-fn {
+  font-size: 0.76rem;
+  color: var(--txt-primary);
+  line-height: 1.5;
 }
 
 .brain__legend {
   list-style: none;
-  margin: 4px 0 0;
+  margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;

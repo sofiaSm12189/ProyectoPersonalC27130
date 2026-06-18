@@ -12,6 +12,13 @@
         </p>
       </div>
 
+      <div class="reflect__narration reveal">
+        <NarrationButton
+          src="/audio/narracion3.mp3"
+          label="Escuchar la reflexión"
+        />
+      </div>
+
       <!-- Contraste 1824 vs 2024 -->
       <div class="reflect__contrast reveal">
         <div class="reflect__side reflect__side--then">
@@ -92,7 +99,9 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import NarrationButton from './NarrationButton.vue'
+</script>
 
 <style scoped>
 .reflect {
@@ -108,6 +117,12 @@
 .reflect__inner {
   max-width: 920px;
   margin: 0 auto;
+}
+
+.reflect__narration {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 56px;
 }
 
 /* Contraste */

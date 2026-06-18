@@ -29,6 +29,14 @@
         <p class="era__tagline">"{{ era.tagline }}"</p>
       </header>
 
+      <NarrationButton
+        v-if="era.id === 'era-algoritmo' && era.narrationSrc"
+        :src="era.narrationSrc"
+        label="Escuchar narración de la época"
+        :accent-color="era.accentColor"
+        class="era__narration"
+      />
+
       <p class="era__description">{{ era.description }}</p>
 
       <ul class="era__characteristics">
@@ -85,6 +93,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import BrainDiagram from './BrainDiagram.vue'
+import NarrationButton from './NarrationButton.vue'
 
 const props = defineProps({
   era:   { type: Object, required: true },
@@ -248,6 +257,8 @@ onUnmounted(() => observer && observer.disconnect())
 }
 
 .era__header { margin-bottom: 18px; }
+
+.era__narration { margin-bottom: 22px; }
 
 .era__years {
   font-family: var(--font-classical);

@@ -115,6 +115,13 @@
         <span>Comenzar el viaje</span>
         <span class="hero__cta-arrow" aria-hidden="true">↓</span>
       </a>
+
+      <div class="hero__narration">
+        <NarrationButton
+          src="/audio/narracion1.mp3"
+          label="Escuchar la introducción"
+        />
+      </div>
     </div>
 
     <div class="hero__scroll-indicator" aria-hidden="true">
@@ -126,6 +133,7 @@
 <script setup>
 import { ref, onUnmounted } from "vue";
 import { connectAnalyser, getLevel } from "../composables/useAudioAnalyser.js";
+import NarrationButton from "./NarrationButton.vue";
 
 const tchaikovskyImg = "/images/tchaikovsky.webp";
 const sabrinaImg = "/images/sabrina.webp";
@@ -660,6 +668,12 @@ function particleStyle(n) {
   color: var(--txt-dim);
   line-height: 1.85;
   margin-bottom: 36px;
+}
+
+.hero__narration {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
 }
 
 .hero__cta {
