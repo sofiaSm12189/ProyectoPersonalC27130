@@ -4,9 +4,11 @@
   "eras": [
     {
       "id": "clasicismo-tardio",
-      "videoSrc": "/video/era-clasicismo.mp4",
       "brain": {
-        "regions": ["prefrontal", "parietal"],
+        "regions": [
+          "prefrontal",
+          "parietal"
+        ],
         "label": "Corteza prefrontal · Lóbulo parietal",
         "effect": "La estructura matemática de la forma sonata activa el razonamiento abstracto (corteza prefrontal) y el procesamiento espacial (lóbulo parietal): las mismas áreas que usamos para resolver matemáticas."
       },
@@ -20,7 +22,12 @@
       "icon": "𝄞",
       "description": "En los albores del siglo XIX la música vivía su apogeo como lenguaje del espíritu humano. La forma sonata alcanzaba su perfección matemática y el arte de combinar estructura con emoción llegó a su cumbre. Beethoven componía sus últimas sinfonías completamente sordo, un acto de voluntad creadora que el mundo jamás había visto. La música no era entretenimiento: era pensamiento, era filosofía sonora.",
       "intellectualImpact": "Los grandes compositores de esta era estudiaban matemáticas, filosofía y literatura con la misma dedicación que la música. Beethoven leía a Kant y Goethe. Sus sinfonías son tratados filosóficos expresados en sonido. La investigación moderna confirma que escuchar música compleja activa simultáneamente las regiones del cerebro asociadas al lenguaje, la memoria episódica y el razonamiento espacial.",
-      "keyFigures": ["Ludwig van Beethoven", "Franz Schubert", "Gioachino Rossini", "Carl Maria von Weber"],
+      "keyFigures": [
+        "Ludwig van Beethoven",
+        "Franz Schubert",
+        "Gioachino Rossini",
+        "Carl Maria von Weber"
+      ],
       "characteristics": [
         "Forma sonata perfectamente elaborada",
         "Claridad y equilibrio temático",
@@ -34,8 +41,10 @@
           "year": 1824,
           "youtubeSearch": "Beethoven Symphony No 9 Ode to Joy Karajan",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Compuesta cuando Beethoven era completamente sordo. Al terminar el estreno se giró para ver los aplausos que no podía escuchar. El mayor acto de fe en el poder creador humano."
+          "audioSrc": "/audio/songs/bethovenaudio.mp3",
+          "image": "/images/songs/1bethoven.webp",
+          "significance": "Compuesta cuando Beethoven era completamente sordo. Al terminar el estreno se giró para ver los aplausos que no podía escuchar. El mayor acto de fe en el poder creador humano.",
+          "story": "Beethoven trabajó en ella más de seis años, ya completamente sordo. Fue la primera sinfonía de la historia en incluir voces humanas: tomó la \"Oda a la Alegría\" de Schiller, un poema que admiraba desde joven, para el final coral. En el estreno de 1824 tuvo que ser girado hacia el público para ver los aplausos que no podía escuchar."
         },
         {
           "title": "Sonata 'Claro de Luna', Op. 27 No. 2",
@@ -43,8 +52,10 @@
           "year": 1801,
           "youtubeSearch": "Beethoven Moonlight Sonata Barenboim",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Redefinió la forma de la sonata y abrió la puerta al Romanticismo musical."
+          "audioSrc": "/audio/songs/audio2bethoven.mp3",
+          "image": "/images/songs/2bethoven.webp",
+          "significance": "Redefinió la forma de la sonata y abrió la puerta al Romanticismo musical.",
+          "story": "La compuso en 1801 y la dedicó a su alumna, la condesa Giulietta Guicciardi, de quien estaba enamorado. Él la tituló solo \"Sonata casi una fantasía\"; el nombre \"Claro de Luna\" lo inventó un crítico años después, al comparar el primer movimiento con la luz de la luna sobre el lago de Lucerna."
         },
         {
           "title": "Sinfonía Inacabada N.° 8 en Si menor",
@@ -52,8 +63,10 @@
           "year": 1822,
           "youtubeSearch": "Schubert Symphony No 8 Unfinished Abbado",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "La obra 'incompleta' más perfecta de la historia. Dos movimientos que valen por una sinfonía completa."
+          "audioSrc": "/audio/songs/schubertaudio.mp3",
+          "image": "/images/songs/3franzschubert.webp",
+          "significance": "La obra 'incompleta' más perfecta de la historia. Dos movimientos que valen por una sinfonía completa.",
+          "story": "Schubert escribió solo dos movimientos en 1822 y, misteriosamente, nunca la terminó aunque vivió seis años más. Se la entregó a un amigo y quedó olvidada en un cajón durante más de cuarenta años, hasta estrenarse en 1865, mucho después de su muerte."
         },
         {
           "title": "Ave Maria, D. 839",
@@ -61,8 +74,10 @@
           "year": 1825,
           "youtubeSearch": "Schubert Ave Maria Netrebko",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Una de las melodías más reconocidas del mundo. La pureza hecha música."
+          "audioSrc": "/audio/songs/avemariaaudio.mp3",
+          "image": "/images/songs/4franzschubert.webp",
+          "significance": "Una de las melodías más reconocidas del mundo. La pureza hecha música.",
+          "story": "No nació como oración: Schubert la compuso en 1825 como parte de un ciclo basado en el poema \"La Dama del Lago\" de Walter Scott. La melodía era tan pura que con el tiempo se le adaptó el texto latino del Ave María, y así se volvió inmortal."
         }
       ],
       "narrationSrc": "/audio/narration-clasicismo.mp3",
@@ -78,9 +93,10 @@
     },
     {
       "id": "romanticismo",
-      "videoSrc": "/video/era-romanticismo.mp4",
       "brain": {
-        "regions": ["limbic"],
+        "regions": [
+          "limbic"
+        ],
         "label": "Sistema límbico · Amígdala",
         "effect": "La intensidad emocional del Romanticismo activa el sistema límbico y la amígdala, el centro donde el cerebro procesa los sentimientos más profundos. Por eso Chopin nos hace sentir melancolía sin una sola palabra."
       },
@@ -94,7 +110,14 @@
       "icon": "♩",
       "description": "El Romanticismo liberó a la música de sus corsés estructurales. Los compositores comenzaron a explorar el mundo interior con una intensidad nunca vista. Chopin capturaba la melancolía polaca en sus nocturnos. Liszt reinventó la técnica pianística. Wagner concibió óperas que duraban cuatro horas como experiencias totales que transformaban al espectador. La música reclamaba el derecho a ser tan densa y compleja como la vida misma.",
       "intellectualImpact": "Los románticos creían que la música podía expresar lo que las palabras eran incapaces de decir. Nietzsche escribió que 'sin música, la vida sería un error'. Esta era vio nacer el concepto de que el arte tiene el poder de transformar la conciencia humana, una idea que sigue siendo válida.",
-      "keyFigures": ["Frédéric Chopin", "Franz Liszt", "Giuseppe Verdi", "Richard Wagner", "Robert Schumann", "Johannes Brahms"],
+      "keyFigures": [
+        "Frédéric Chopin",
+        "Franz Liszt",
+        "Giuseppe Verdi",
+        "Richard Wagner",
+        "Robert Schumann",
+        "Johannes Brahms"
+      ],
       "characteristics": [
         "Expresión emocional intensa y personal",
         "Programas literarios y narrativos",
@@ -108,8 +131,10 @@
           "year": 1832,
           "youtubeSearch": "Chopin Nocturne Op 9 No 2 Rubinstein",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "La pieza más íntima de la historia. Cada nota es una confesión."
+          "audioSrc": "/audio/songs/chopinaudio.mp3",
+          "image": "/images/songs/5fredericchopin.webp",
+          "significance": "La pieza más íntima de la historia. Cada nota es una confesión.",
+          "story": "Chopin lo compuso con apenas veinte años. Tomó la idea del \"nocturno\" del irlandés John Field, pero la transformó en algo mucho más íntimo y melancólico, destilando la nostalgia por su Polonia natal, que tuvo que abandonar para siempre."
         },
         {
           "title": "Rapsodia Húngara N.° 2",
@@ -117,8 +142,10 @@
           "year": 1847,
           "youtubeSearch": "Liszt Hungarian Rhapsody No 2 Horowitz",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Liszt transformó el piano en una orquesta entera. Ningún pianista antes había hecho esto."
+          "audioSrc": "/audio/songs/lisztaudio.mp3",
+          "image": "/images/songs/6franzliszt.webp",
+          "significance": "Liszt transformó el piano en una orquesta entera. Ningún pianista antes había hecho esto.",
+          "story": "Liszt la basó en melodías gitanas y húngaras que escuchó en su juventud. Es tan endiabladamente difícil que él mismo improvisaba secciones en cada concierto. Su fama llegó a tal punto que aparece en dibujos animados clásicos como símbolo absoluto del virtuosismo al piano."
         },
         {
           "title": "La Traviata (Libiamo ne'lieti calici)",
@@ -126,8 +153,10 @@
           "year": 1853,
           "youtubeSearch": "Verdi La Traviata Brindisi Domingo",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Opera que hablaba de amor, muerte y sociedad. Verdi era la banda sonora de Italia."
+          "audioSrc": "/audio/songs/brindisiaudio.mp3",
+          "image": "/images/songs/7guiseppe.webp",
+          "significance": "Opera que hablaba de amor, muerte y sociedad. Verdi era la banda sonora de Italia.",
+          "story": "Verdi se inspiró en la novela \"La Dama de las Camelias\" de Alejandro Dumas. El brindis \"Libiamo\" abre la ópera con una celebración que contrasta con la tragedia que vendrá. El estreno de 1853 fue un fracaso rotundo; hoy es una de las óperas más representadas del mundo."
         },
         {
           "title": "Sinfonía N.° 4 en Mi menor, Op. 98",
@@ -135,8 +164,10 @@
           "year": 1885,
           "youtubeSearch": "Brahms Symphony No 4 Carlos Kleiber",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "La síntesis perfecta entre el rigor clásico y la pasión romántica."
+          "audioSrc": "/audio/songs/brahmsaudio.mp3",
+          "image": "/images/songs/8brahms.webp",
+          "significance": "La síntesis perfecta entre el rigor clásico y la pasión romántica.",
+          "story": "Brahms tardó más de veinte años en atreverse a escribir sinfonías, abrumado por la sombra de Beethoven. Esta, su última, culmina con una \"chacona\": treinta variaciones sobre un mismo tema heredado de Bach, demostrando que la tradición clásica seguía viva."
         },
         {
           "title": "Tristán e Isolda (Preludio y Muerte de Amor)",
@@ -144,8 +175,10 @@
           "year": 1865,
           "youtubeSearch": "Wagner Tristan und Isolde Prelude Karajan",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "El acorde de Tristán cambió la música occidental para siempre. Inicio de la armonía moderna."
+          "audioSrc": "/audio/songs/wagneraudio.mp3",
+          "image": "/images/songs/9wagner.webp",
+          "significance": "El acorde de Tristán cambió la música occidental para siempre. Inicio de la armonía moderna.",
+          "story": "Wagner la compuso mientras vivía un amor prohibido con Mathilde Wesendonck, esposa de su mecenas. El famoso \"acorde de Tristán\" nunca se resuelve del todo, creando una tensión perpetua que rompió las reglas de la armonía y abrió la puerta a la música moderna."
         }
       ],
       "narrationSrc": "/audio/narration-romanticismo.mp3",
@@ -161,9 +194,11 @@
     },
     {
       "id": "post-romanticismo",
-      "videoSrc": "/video/era-postromanticismo.mp4",
       "brain": {
-        "regions": ["temporal", "occipital"],
+        "regions": [
+          "temporal",
+          "occipital"
+        ],
         "label": "Corteza auditiva · Corteza visual",
         "effect": "La música programática de Tchaikovsky genera imágenes mentales: conecta la corteza auditiva con la corteza visual (occipital), creando una sinestesia sonora donde 'vemos' el lago de los cisnes."
       },
@@ -177,7 +212,13 @@
       "icon": "♫",
       "description": "Con Tchaikovsky la música rusa irrumpió en el escenario mundial con una sensualidad y drama desconocidos. Debussy disolvió los acordes en texturas de luz y agua, inventando el Impresionismo musical. Mahler componía sinfonías como universos completos que duraban más de una hora. Era el ocaso del romanticismo y el amanecer de algo totalmente nuevo. La música comenzaba a cuestionar sus propias reglas.",
       "intellectualImpact": "Tchaikovsky demostró que la música podía generar imágenes mentales vivídísimas sin necesidad de palabras. El Lago de los Cisnes no necesita explicación: cada persona visualiza lo mismo. Esta capacidad sinestésica de la música es estudiada hoy como vínculo entre arte y cognición visual.",
-      "keyFigures": ["Piotr Ilyich Tchaikovsky", "Claude Debussy", "Gustav Mahler", "Antonín Dvořák", "Richard Strauss"],
+      "keyFigures": [
+        "Piotr Ilyich Tchaikovsky",
+        "Claude Debussy",
+        "Gustav Mahler",
+        "Antonín Dvořák",
+        "Richard Strauss"
+      ],
       "characteristics": [
         "Orquestas de tamaño monumental",
         "Timbre como elemento compositivo primario",
@@ -186,13 +227,15 @@
       ],
       "songs": [
         {
-          "title": "El Lago de los Cisnes, Op. 20",
+          "title": "La Obertura 1812, Op. 49",
           "artist": "Piotr Ilyich Tchaikovsky",
-          "year": 1876,
-          "youtubeSearch": "Tchaikovsky Swan Lake Ballet Bolshoi full",
+          "year": 1880,
+          "youtubeSearch": "",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "El ballet más famoso de la historia. Tchaikovsky elevó la música de ballet al nivel de la sinfonía."
+          "audioSrc": "/audio/songs/tchaikovskyaudio2.mp3",
+          "image": "/images/songs/10tchaikovsky.webp",
+          "significance": "Hace homenaje a quienes defendieron Rusia de la invasión francesa liderada por Napoleón Bonaparte en el año al que hace referencia el título de la obra, acontecimiento en el que se calcula perecieron cerca de 500 mil hombres de los dos bandos.",
+          "story": "Tchaikovsky lo compuso en 1876 inspirado en cuentos de hadas rusos y alemanes. Su estreno fue un fracaso por una coreografía y una orquesta mediocres, y él murió creyendo que la obra había fallado. Hoy es el ballet más representado del planeta."
         },
         {
           "title": "Claro de Luna (Suite Bergamasca)",
@@ -200,8 +243,10 @@
           "year": 1905,
           "youtubeSearch": "Debussy Clair de Lune Zimerman",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "No describe la luna: es la luna. La mayor obra del impresionismo musical."
+          "audioSrc": "/audio/songs/debussyaudio.mp3",
+          "image": "/images/songs/11debussy.webp",
+          "significance": "No describe la luna: es la luna. La mayor obra del impresionismo musical.",
+          "story": "Debussy se inspiró en un poema de Paul Verlaine. Odiaba que lo llamaran \"impresionista\", pero su música hace justo eso: en vez de contar una historia, pinta una atmósfera, como si el sonido fuera luz reflejada temblando sobre el agua."
         },
         {
           "title": "Sinfonía N.° 5 en Do sostenido menor",
@@ -209,8 +254,10 @@
           "year": 1904,
           "youtubeSearch": "Mahler Symphony No 5 Bernstein",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "El Adagietto de esta sinfonía es una de las páginas más hermosas jamás escritas."
+          "audioSrc": "/audio/songs/mahleraudio.mp3",
+          "image": "/images/songs/13mahler.webp",
+          "significance": "El Adagietto de esta sinfonía es una de las páginas más hermosas jamás escritas.",
+          "story": "Mahler la compuso justo después de casi morir de una hemorragia y de enamorarse de Alma, su futura esposa. El célebre \"Adagietto\", solo para cuerdas y arpa, fue su carta de amor secreta hacia ella. Se hizo mundialmente famoso en la película \"Muerte en Venecia\"."
         },
         {
           "title": "Sinfonía del Nuevo Mundo N.° 9",
@@ -218,8 +265,10 @@
           "year": 1893,
           "youtubeSearch": "Dvorak New World Symphony Karajan",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Dvořák tomó melodías afroamericanas y nativas y las convirtió en música universal."
+          "audioSrc": "/audio/songs/dvorakaudio.mp3",
+          "image": "/images/songs/14dvorak.webp",
+          "significance": "Dvořák tomó melodías afroamericanas y nativas y las convirtió en música universal.",
+          "story": "Dvořák la compuso dirigiendo un conservatorio en Nueva York en 1893. Quedó fascinado por los espirituales afroamericanos y las melodías nativas, y los fundió con su alma checa. Es tan universal que Neil Armstrong la llevó consigo a la Luna."
         }
       ],
       "narrationSrc": "/audio/narration-post-romanticismo.mp3",
@@ -235,9 +284,11 @@
     },
     {
       "id": "jazz-blues",
-      "videoSrc": "/video/era-jazz.mp4",
       "brain": {
-        "regions": ["prefrontal", "broca"],
+        "regions": [
+          "prefrontal",
+          "broca"
+        ],
         "label": "Corteza prefrontal medial · Área de Broca",
         "effect": "Durante la improvisación, el cerebro desactiva la autocensura y activa la corteza prefrontal medial junto a las áreas del lenguaje (Broca): el músico de jazz 'habla' espontáneamente con su instrumento, igual que conversamos."
       },
@@ -251,7 +302,14 @@
       "icon": "♬",
       "description": "El Jazz nació de la comunidad afroamericana como un acto de resistencia cultural y de búsqueda de identidad. Por primera vez en la historia, una forma musical surgía desde los márgenes sociales y conquistaba el mundo entero. Louis Armstrong le mostró al mundo que la improvisación era una forma legítima y sublime de composición instantánea. El Blues documentó el dolor humano con una honestidad que pocas artes han logrado.",
       "intellectualImpact": "La improvisación jazzística activa las regiones del cerebro asociadas al lenguaje espontáneo (estudios del NIH, 2008). El músico de jazz 'habla' con su instrumento igual que hablamos con palabras. Esta equivalencia entre música e idioma es evidencia de que la música es una función cognitiva fundamental, no un lujo.",
-      "keyFigures": ["Louis Armstrong", "Duke Ellington", "Billie Holiday", "Charlie Parker", "Miles Davis", "Bessie Smith"],
+      "keyFigures": [
+        "Louis Armstrong",
+        "Duke Ellington",
+        "Billie Holiday",
+        "Charlie Parker",
+        "Miles Davis",
+        "Bessie Smith"
+      ],
       "characteristics": [
         "Improvisación como lenguaje espontáneo",
         "Síncopa y swing como base rítmica",
@@ -265,8 +323,10 @@
           "year": 1967,
           "youtubeSearch": "Louis Armstrong What a Wonderful World original",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Grabada durante el movimiento por los derechos civiles, es un acto de esperanza radical."
+          "audioSrc": "/audio/songs/louisaudio.mp3",
+          "image": "/images/songs/15louis.webp",
+          "significance": "Grabada durante el movimiento por los derechos civiles, es un acto de esperanza radical.",
+          "story": "Grabada en 1967, en plena tensión racial en Estados Unidos, como un mensaje deliberado de esperanza. La discográfica casi no la promocionó: fue un fracaso en EE. UU. pero un éxito en el resto del mundo, y hoy es un himno universal a la vida."
         },
         {
           "title": "Take the A Train",
@@ -274,8 +334,10 @@
           "year": 1941,
           "youtubeSearch": "Duke Ellington Take the A Train original recording",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "El tema oficial de la orquesta de Ellington. El jazz en estado puro."
+          "audioSrc": "/audio/songs/dukeaudio.mp3",
+          "image": "/images/songs/16duke.webp",
+          "significance": "El tema oficial de la orquesta de Ellington. El jazz en estado puro.",
+          "story": "En realidad la compuso Billy Strayhorn, el colaborador de Ellington, siguiendo las indicaciones del metro para llegar a su casa en Harlem (\"toma el tren A\"). Esa nota garabateada se convirtió en el tema insignia de toda la orquesta."
         },
         {
           "title": "Strange Fruit",
@@ -283,8 +345,10 @@
           "year": 1939,
           "youtubeSearch": "Billie Holiday Strange Fruit original 1939",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "La primera gran canción de protesta de la historia. Un poema sobre el racismo que ninguna radio quería tocar."
+          "audioSrc": "/audio/songs/billiaudio.mp3",
+          "image": "/images/songs/17holiday.webp",
+          "significance": "La primera gran canción de protesta de la historia. Un poema sobre el racismo que ninguna radio quería tocar.",
+          "story": "Nació de un poema de un maestro judío, Abel Meeropol, que denunciaba los linchamientos de personas negras (\"fruta extraña colgando de los árboles\"). Billie la cantaba al cierre de cada show, con las luces apagadas y sin bis. Su propio sello se negó a grabarla por miedo."
         },
         {
           "title": "Round Midnight",
@@ -292,8 +356,10 @@
           "year": 1944,
           "youtubeSearch": "Thelonious Monk Round Midnight original",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "El jazz se vuelve introspectivo. La música como confesionario."
+          "audioSrc": "/audio/songs/theloniousaudio.mp3",
+          "image": "/images/songs/18thelonious.webp",
+          "significance": "El jazz se vuelve introspectivo. La música como confesionario.",
+          "story": "Monk la compuso siendo apenas un adolescente, hacia 1940. Es la composición de jazz más grabada de la historia: su melodía nocturna captura como ninguna la soledad y la belleza de la medianoche en la ciudad."
         },
         {
           "title": "So What",
@@ -301,8 +367,10 @@
           "year": 1959,
           "youtubeSearch": "Miles Davis Kind of Blue So What",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Del álbum Kind of Blue, el más vendido de la historia del jazz. La melancolía elevada a arte."
+          "audioSrc": "/audio/songs/milesaudio.mp3",
+          "image": "/images/songs/19miles.webp",
+          "significance": "Del álbum Kind of Blue, el más vendido de la historia del jazz. La melancolía elevada a arte.",
+          "story": "Del álbum \"Kind of Blue\" (1959), el más vendido en la historia del jazz. Davis casi no ensayó: dio a los músicos solo unos bocetos y grabaron en su mayoría a la primera toma, capturando pura espontaneidad e instinto."
         }
       ],
       "narrationSrc": "/audio/narration-jazz.mp3",
@@ -318,9 +386,11 @@
     },
     {
       "id": "rock-soul",
-      "videoSrc": "/video/era-rocksoul.mp4",
       "brain": {
-        "regions": ["motor", "cerebellum"],
+        "regions": [
+          "motor",
+          "cerebellum"
+        ],
         "label": "Corteza motora · Cerebelo",
         "effect": "El ritmo del rock activa la corteza motora y el cerebelo, los sistemas del movimiento. Por eso es físicamente difícil quedarse quieto: el cuerpo responde al beat antes de que la mente lo decida."
       },
@@ -334,7 +404,14 @@
       "icon": "♪",
       "description": "El Rock nació de la fusión del Blues negro con la energía blanca y la guitarra eléctrica. Chuck Berry inventó el idioma. Elvis lo popularizó. The Beatles lo globalizaron. Esta fue la primera vez que la música joven se convirtió en identidad generacional. El Rock no era solo música: era una postura ante el mundo, una declaración de independencia cultural que aterrorizaba a los adultos y liberaba a los jóvenes.",
       "intellectualImpact": "La investigadora Nina Kraus (Northwestern University) demostró que tocar un instrumento musical desde joven genera cambios estructurales permanentes en el cerebro: mayor materia gris en regiones auditivas, motoras y de lenguaje. Los músicos de esta era que comenzaron de niños literalmente construyeron cerebros diferentes.",
-      "keyFigures": ["Elvis Presley", "Chuck Berry", "The Beatles", "Jimi Hendrix", "Ray Charles", "James Brown"],
+      "keyFigures": [
+        "Elvis Presley",
+        "Chuck Berry",
+        "The Beatles",
+        "Jimi Hendrix",
+        "Ray Charles",
+        "James Brown"
+      ],
       "characteristics": [
         "La guitarra eléctrica como voz generacional",
         "La rebelión juvenil como tema central",
@@ -348,8 +425,10 @@
           "year": 1958,
           "youtubeSearch": "Chuck Berry Johnny B Goode original",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "La primera gran canción de rock and roll. La NASA la incluyó en la Voyager Golden Record enviada al espacio."
+          "audioSrc": "/audio/songs/chuckaudio.mp3",
+          "image": "/images/songs/20chuck.webp",
+          "significance": "La primera gran canción de rock and roll. La NASA la incluyó en la Voyager Golden Record enviada al espacio.",
+          "story": "Berry la escribió en 1958 sobre un chico pobre del campo que llega a ser estrella, inspirándose en parte en su propia vida. Cambió \"colored boy\" por \"country boy\" para que sonara en la radio. La NASA la envió al espacio en el disco de oro de la Voyager."
         },
         {
           "title": "Hey Jude",
@@ -357,8 +436,10 @@
           "year": 1968,
           "youtubeSearch": "The Beatles Hey Jude official",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "7 minutos de pura catarsis colectiva. El 'na na na' final lo cantaron 300 millones de personas en simultáneo."
+          "audioSrc": "/audio/songs/thebeatlesaudio.mp3",
+          "image": "/images/songs/21thebeatles.webp",
+          "significance": "7 minutos de pura catarsis colectiva. El 'na na na' final lo cantaron 300 millones de personas en simultáneo.",
+          "story": "Paul McCartney la escribió para consolar a Julian, el hijo de John Lennon, durante el divorcio de sus padres; al inicio decía \"Hey Jules\". Dura más de siete minutos y su final coral de \"na na na\" se convirtió en un himno para cantar en masa."
         },
         {
           "title": "Purple Haze",
@@ -366,8 +447,10 @@
           "year": 1967,
           "youtubeSearch": "Jimi Hendrix Purple Haze original",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Hendrix redefinió lo que una guitarra eléctrica podía hacer. Un instrumento diferente en sus manos."
+          "audioSrc": "/audio/songs/jimihendrixaudio.mp3",
+          "image": "/images/songs/22hendrix.webp",
+          "significance": "Hendrix redefinió lo que una guitarra eléctrica podía hacer. Un instrumento diferente en sus manos.",
+          "story": "Hendrix dijo que la melodía le llegó en un sueño. La grabó en 1967 usando distorsión y feedback nunca antes escuchados, redefiniendo por completo lo que una guitarra eléctrica podía llegar a sonar."
         },
         {
           "title": "(I Can't Get No) Satisfaction",
@@ -375,8 +458,10 @@
           "year": 1965,
           "youtubeSearch": "Rolling Stones Satisfaction original",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "El riff más famoso de la historia. La insatisfacción como identidad generacional."
+          "audioSrc": "/audio/songs/rollingaudio.mp3",
+          "image": "/images/songs/23rollingstones.webp",
+          "significance": "El riff más famoso de la historia. La insatisfacción como identidad generacional.",
+          "story": "Keith Richards despertó de madrugada, grabó el riff en una grabadora junto a su cama y se durmió otra vez. A la mañana siguiente encontró en la cinta el riff más famoso del rock seguido de cuarenta minutos de ronquidos. Jagger escribió encima la letra sobre la frustración y el consumismo."
         },
         {
           "title": "I Got You (I Feel Good)",
@@ -384,8 +469,10 @@
           "year": 1965,
           "youtubeSearch": "James Brown I Feel Good original",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "El Padrino del Soul. James Brown inventó el funk y es el abuelo del hip-hop."
+          "audioSrc": "/audio/songs/jamesaudio.mp3",
+          "image": "/images/songs/24jamesbrown.webp",
+          "significance": "El Padrino del Soul. James Brown inventó el funk y es el abuelo del hip-hop.",
+          "story": "Brown la grabó en 1965 con su característico grito de apertura. Su ritmo sincopado y explosivo sentó las bases del funk y, décadas después, se convertiría en una de las canciones más sampleadas de todo el hip-hop."
         }
       ],
       "narrationSrc": "/audio/narration-rock-soul.mp3",
@@ -401,9 +488,11 @@
     },
     {
       "id": "rock-clasico",
-      "videoSrc": "/video/era-rockclasico.mp4",
       "brain": {
-        "regions": ["hippocampus", "temporal"],
+        "regions": [
+          "hippocampus",
+          "temporal"
+        ],
         "label": "Hipocampo · Corteza auditiva",
         "effect": "Los álbumes conceptuales exigen escucha profunda y sostenida, activando el hipocampo (memoria) para conectar más de 40 minutos de música como una sola narrativa coherente. Es como leer una novela en lugar de un tuit."
       },
@@ -417,7 +506,14 @@
       "icon": "𝄢",
       "description": "Los setenta y ochenta vieron nacer los álbumes más ambiciosos de la historia. Pink Floyd construyó obras conceptuales que eran experiencias completas. Queen combinaba ópera con rock en una canción. Michael Jackson convirtió cada videoclip en una película de diez minutos. La producción musical alcanzó su complejidad máxima: grabaciones con decenas de capas, orquestas completas, efectos electrónicos pioneros. Era costoso, lento y brillante.",
       "intellectualImpact": "Un álbum como The Dark Side of the Moon de Pink Floyd requería que el oyente le dedicara 43 minutos de atención concentrada para entenderlo como totalidad. Esta escucha profunda activa circuitos de atención y memoria que las canciones breves no pueden activar. Es la diferencia entre leer una novela y leer un tuit.",
-      "keyFigures": ["Led Zeppelin", "Pink Floyd", "Queen", "Michael Jackson", "David Bowie", "Elton John"],
+      "keyFigures": [
+        "Led Zeppelin",
+        "Pink Floyd",
+        "Queen",
+        "Michael Jackson",
+        "David Bowie",
+        "Elton John"
+      ],
       "characteristics": [
         "Álbumes conceptuales como obras totales",
         "Producción de estudio como arte",
@@ -431,8 +527,10 @@
           "year": 1975,
           "youtubeSearch": "Queen Bohemian Rhapsody official video",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "6 minutos que cambiaron la radio. Ópera, balada y rock duro en una misma canción. Nadie sabía que eso era posible."
+          "audioSrc": "/audio/songs/queenaudio.mp3",
+          "image": "/images/songs/25queen.webp",
+          "significance": "6 minutos que cambiaron la radio. Ópera, balada y rock duro en una misma canción. Nadie sabía que eso era posible.",
+          "story": "Freddie Mercury la compuso en trozos de papel y la grabó en seis estudios distintos. La sección operística tomó tres semanas y unas ciento ochenta sobregrabaciones de voces. La discográfica decía que seis minutos era demasiado para la radio; Queen la lanzó igual y cambió la historia."
         },
         {
           "title": "Stairway to Heaven",
@@ -440,8 +538,10 @@
           "year": 1971,
           "youtubeSearch": "Led Zeppelin Stairway to Heaven original",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "La canción más radiada de la historia del rock clásico. Un viaje en 8 minutos."
+          "audioSrc": "/audio/songs/ledzepellinaudio.mp3",
+          "image": "/images/songs/26ledzepellin.webp",
+          "significance": "La canción más radiada de la historia del rock clásico. Un viaje en 8 minutos.",
+          "story": "Jimmy Page y Robert Plant la escribieron en una cabaña remota de Gales en 1971. Crece lentamente desde una balada acústica hasta una explosión de rock. Nunca se lanzó como sencillo y, aun así, es la canción más radiada en la historia del rock."
         },
         {
           "title": "Thriller",
@@ -449,8 +549,10 @@
           "year": 1982,
           "youtubeSearch": "Michael Jackson Thriller official video",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "El videoclip más visto de la historia. MJ convirtió el pop en espectáculo total."
+          "audioSrc": "/audio/songs/michaelaudio.mp3",
+          "image": "/images/songs/27michael.webp",
+          "significance": "El videoclip más visto de la historia. MJ convirtió el pop en espectáculo total.",
+          "story": "Su videoclip de 1983, rodado como una película de terror con zombis, duró catorce minutos y costó medio millón de dólares. Revolucionó MTV y elevó el videoclip a la categoría de arte. El álbum sigue siendo el más vendido de todos los tiempos."
         },
         {
           "title": "The Wall (Another Brick in the Wall Pt. 2)",
@@ -458,8 +560,10 @@
           "year": 1979,
           "youtubeSearch": "Pink Floyd Another Brick in the Wall official",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Una crítica al sistema educativo que se convirtió en himno generacional mundial."
+          "audioSrc": "/audio/songs/pinkaudio.mp3",
+          "image": "/images/songs/28pinkfloyd.webp",
+          "significance": "Una crítica al sistema educativo que se convirtió en himno generacional mundial.",
+          "story": "Roger Waters la escribió como crítica al rígido sistema educativo británico que había sufrido. Grabaron a un coro real de niños de una escuela de Londres cantando \"no necesitamos educación\", sin que el colegio entendiera del todo el mensaje que estaba entonando."
         },
         {
           "title": "Heroes",
@@ -467,8 +571,10 @@
           "year": 1977,
           "youtubeSearch": "David Bowie Heroes official",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Grabada junto al Muro de Berlín. Una de las canciones más emocionantes jamás escritas."
+          "audioSrc": "/audio/songs/davidbowieaudio.mp3",
+          "image": "/images/songs/29davidbowie.webp",
+          "significance": "Grabada junto al Muro de Berlín. Una de las canciones más emocionantes jamás escritas.",
+          "story": "Bowie la compuso en Berlín en 1977, inspirado al ver a dos amantes besándose junto al Muro. Es una historia de amor desafiante en plena Guerra Fría, grabada con una técnica de tres micrófonos que captaban su voz a distintas distancias."
         }
       ],
       "narrationSrc": "/audio/narration-rock-clasico.mp3",
@@ -484,9 +590,11 @@
     },
     {
       "id": "pop-grunge-hiphop",
-      "videoSrc": "/video/era-grunge.mp4",
       "brain": {
-        "regions": ["limbic", "broca"],
+        "regions": [
+          "limbic",
+          "broca"
+        ],
         "label": "Amígdala · Áreas del lenguaje",
         "effect": "El hip-hop combina la carga emocional de la amígdala con el procesamiento lingüístico de las áreas del lenguaje: estudios confirman que el rap activa los mismos circuitos cerebrales que la poesía formal."
       },
@@ -500,7 +608,14 @@
       "icon": "♩",
       "description": "Los noventa fueron una batalla entre opuestos. El grunge de Nirvana rechazó la superficialidad del pop de los ochenta con guitarras sucias y letras de angustia existencial. Al mismo tiempo, Tupac y Notorious B.I.G. convertían las calles de Estados Unidos en literatura hip-hop de altísimo nivel. Y mientras tanto, el pop industrial de las boyband vendía discos por decenas de millones. Nunca hubo tanta diversidad musical en simultáneo.",
       "intellectualImpact": "Las letras de Tupac Shakur son estudiadas en cátedras universitarias de literatura. El hip-hop demostró que la poesía puede vivir en el ritmo y la calle tanto como en la academia. Un estudio de la Universidad de Exeter (2017) encontró que el rap activa en el cerebro los mismos circuitos que la poesía formal.",
-      "keyFigures": ["Nirvana", "Tupac Shakur", "Whitney Houston", "Madonna", "The Notorious B.I.G.", "Backstreet Boys"],
+      "keyFigures": [
+        "Nirvana",
+        "Tupac Shakur",
+        "Whitney Houston",
+        "Madonna",
+        "The Notorious B.I.G.",
+        "Backstreet Boys"
+      ],
       "characteristics": [
         "Fragmentación del mercado musical",
         "El grunge como reacción auténtica al pop comercial",
@@ -514,8 +629,10 @@
           "year": 1991,
           "youtubeSearch": "Nirvana Smells Like Teen Spirit official",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "El grito de una generación. Kurt Cobain quería hacer una canción que sonara al peor pop. Accidentalmente inventó el grunge."
+          "audioSrc": "/audio/songs/nirvanaaudio.mp3",
+          "image": "/images/songs/30nirvana.webp",
+          "significance": "El grito de una generación. Kurt Cobain quería hacer una canción que sonara al peor pop. Accidentalmente inventó el grunge.",
+          "story": "Kurt Cobain intentó escribir \"la canción pop definitiva\" copiando la fórmula suave-fuerte de los Pixies. El título salió de un grafiti que una amiga pintó en su pared (\"Kurt huele a Teen Spirit\", un desodorante). Definió a toda una generación casi por accidente."
         },
         {
           "title": "Changes",
@@ -523,8 +640,10 @@
           "year": 1992,
           "youtubeSearch": "Tupac Changes official video",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Poesía urbana sobre raza, pobreza y esperanza. Sigue siendo tan relevante hoy como hace 30 años."
+          "audioSrc": "/audio/songs/2pacaudio.mp3",
+          "image": "/images/songs/31tupac.webp",
+          "significance": "Poesía urbana sobre raza, pobreza y esperanza. Sigue siendo tan relevante hoy como hace 30 años.",
+          "story": "Tupac la construyó sobre un sample de \"The Way It Is\" de Bruce Hornsby. La letra retrata el racismo, la pobreza y la violencia con una honestidad brutal. Se publicó en 1998, dos años después de su asesinato, y sigue siendo dolorosamente actual."
         },
         {
           "title": "I Will Always Love You",
@@ -532,8 +651,10 @@
           "year": 1992,
           "youtubeSearch": "Whitney Houston I Will Always Love You official",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Considerada la mejor interpretación vocal pop de todos los tiempos. La voz humana como instrumento supremo."
+          "audioSrc": "/audio/songs/whitneyaudio.mp3",
+          "image": "/images/songs/32whitney.webp",
+          "significance": "Considerada la mejor interpretación vocal pop de todos los tiempos. La voz humana como instrumento supremo.",
+          "story": "La escribió Dolly Parton en 1973. Whitney la transformó para la película \"El Guardaespaldas\" (1992) añadiendo esa explosión vocal a capela del inicio, idea del actor Kevin Costner. Es uno de los sencillos más vendidos de la historia."
         },
         {
           "title": "Lose Yourself",
@@ -541,8 +662,10 @@
           "year": 2002,
           "youtubeSearch": "Eminem Lose Yourself official",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Primera canción de hip-hop en ganar el Óscar. El rap como narrativa cinematográfica."
+          "audioSrc": "/audio/songs/eminemaudio.mp3",
+          "image": "/images/songs/33eminem.webp",
+          "significance": "Primera canción de hip-hop en ganar el Óscar. El rap como narrativa cinematográfica.",
+          "story": "Eminem la escribió en el set de su película \"8 Mile\", en los descansos del rodaje. Trata sobre aprovechar la única oportunidad de tu vida. Fue la primera canción de hip-hop en ganar el Óscar a la mejor canción original."
         },
         {
           "title": "Ray of Light",
@@ -550,8 +673,10 @@
           "year": 1998,
           "youtubeSearch": "Madonna Ray of Light official",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Madonna fusionó electrónica con pop y espiritualidad. Anticipó el dance-pop de los 2000."
+          "audioSrc": "/audio/songs/madonnaaudio.mp3",
+          "image": "/images/songs/34madonna.webp",
+          "significance": "Madonna fusionó electrónica con pop y espiritualidad. Anticipó el dance-pop de los 2000.",
+          "story": "Madonna la grabó en 1998 tras ser madre y estudiar la Cábala, fusionando música electrónica con espiritualidad. Está basada en una vieja canción folk de los años setenta y marcó su reinvención total como artista electrónica."
         }
       ],
       "narrationSrc": "/audio/narration-pop-grunge.mp3",
@@ -567,9 +692,10 @@
     },
     {
       "id": "pop-digital",
-      "videoSrc": "/video/era-popdigital.mp4",
       "brain": {
-        "regions": ["accumbens"],
+        "regions": [
+          "accumbens"
+        ],
         "label": "Núcleo accumbens",
         "effect": "El gancho pegadizo del pop digital estimula el núcleo accumbens, liberando dopamina anticipada: el cerebro 'predice' el placer del estribillo antes de que llegue, y esa expectativa es parte del disfrute."
       },
@@ -583,7 +709,15 @@
       "icon": "♫",
       "description": "Napster, iTunes y luego Spotify cambiaron para siempre la relación de las personas con la música. Ahora todos tenían acceso a todo, en cualquier momento. Amy Winehouse grabó Back to Black con un sonido deliberadamente analógico y vendió 20 millones de copias en plena era digital. Adele probó que la voz humana sin filtros seguía siendo lo más poderoso. Pero también fue la era en que el álbum como formato comenzó a morir.",
       "intellectualImpact": "La disponibilidad infinita de música redujo el tiempo promedio de escucha por canción. En 2005, la gente escuchaba 3 minutos completos. En 2015, el 25% de los oyentes ya saltaban a otra canción antes del primer minuto. La atención musical se estaba fragmentando antes de que TikTok existiera.",
-      "keyFigures": ["Amy Winehouse", "Adele", "Beyoncé", "Radiohead", "Lady Gaga", "Arctic Monkeys", "Kanye West"],
+      "keyFigures": [
+        "Amy Winehouse",
+        "Adele",
+        "Beyoncé",
+        "Radiohead",
+        "Lady Gaga",
+        "Arctic Monkeys",
+        "Kanye West"
+      ],
       "characteristics": [
         "Fin del álbum como formato dominante",
         "El streaming frente a la propiedad de la música",
@@ -597,8 +731,10 @@
           "year": 2010,
           "youtubeSearch": "Adele Rolling in the Deep official",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "En la era del autotune, Adele demostró que una voz real y honesta sigue siendo imparable."
+          "audioSrc": "/audio/songs/adeleaudii.mp3",
+          "image": "/images/songs/35adele.webp",
+          "significance": "En la era del autotune, Adele demostró que una voz real y honesta sigue siendo imparable.",
+          "story": "Adele la escribió en una sola tarde, furiosa tras una ruptura. La grabó con apenas una guitarra y palmas como base rítmica. Se convirtió en la canción más vendida de 2011 y la catapultó al estrellato mundial."
         },
         {
           "title": "Rehab",
@@ -606,8 +742,10 @@
           "year": 2006,
           "youtubeSearch": "Amy Winehouse Rehab official video",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Amy rechazó la rehabilitación en una canción y el mundo aplaudió. Su tragedia y su genio son inseparables."
+          "audioSrc": "/audio/songs/amyaudio.mp3",
+          "image": "/images/songs/36amy.webp",
+          "significance": "Amy rechazó la rehabilitación en una canción y el mundo aplaudió. Su tragedia y su genio son inseparables.",
+          "story": "Nació de una conversación real: cuando le sugirieron ir a rehabilitación, Amy respondió \"no, no, no\". Su productor Mark Ronson la convenció de convertir esa frase en canción. Su sonido soul retro y su tragedia personal quedaron para siempre entrelazados."
         },
         {
           "title": "Crazy in Love",
@@ -615,8 +753,10 @@
           "year": 2003,
           "youtubeSearch": "Beyonce Crazy in Love official",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Beyoncé definió el R&B del siglo XXI. Músico, performer y productora en una sola persona."
+          "audioSrc": "/audio/songs/beyonceaudio.mp3",
+          "image": "/images/songs/37beyonce.webp",
+          "significance": "Beyoncé definió el R&B del siglo XXI. Músico, performer y productora en una sola persona.",
+          "story": "El icónico riff de trompetas viene de un sample de los años setenta (The Chi-Lites). Beyoncé lo grabó en 2003 para su debut en solitario, junto a Jay-Z. El \"uh oh, uh oh\" surgió de un sonido improvisado por el productor a las tres de la mañana."
         },
         {
           "title": "Creep",
@@ -624,8 +764,10 @@
           "year": 1992,
           "youtubeSearch": "Radiohead Creep official video",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "La canción del inadaptado que se volvió himno de todos los inadaptados del mundo."
+          "audioSrc": "/audio/songs/radioheadaudio.mp3",
+          "image": "/images/songs/38radiohead.webp",
+          "significance": "La canción del inadaptado que se volvió himno de todos los inadaptados del mundo.",
+          "story": "La banda la escribió casi sin querer durante un ensayo; al inicio la odiaban y la llamaban \"la canción basura\". Habla de sentirse un inadaptado obsesionado con alguien inalcanzable. Se hizo tan popular que durante años se negaron a tocarla en vivo."
         },
         {
           "title": "Poker Face",
@@ -633,8 +775,10 @@
           "year": 2008,
           "youtubeSearch": "Lady Gaga Poker Face official",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Gaga mezcló arte conceptual con pop de pista de baile. Probó que lo excéntrico puede ser masivo."
+          "audioSrc": "/audio/songs/ladygagaaudio.mp3",
+          "image": "/images/songs/39pokerface.webp",
+          "significance": "Gaga mezcló arte conceptual con pop de pista de baile. Probó que lo excéntrico puede ser masivo.",
+          "story": "Gaga la compuso en 2008 mezclando dance-pop con su afición al póker. La letra esconde un doble sentido sobre su bisexualidad: mantener una \"cara de póker\" para ocultar en quién pensaba de verdad. El \"pa-pa-poker face\" se volvió viral en todo el mundo."
         }
       ],
       "narrationSrc": "/audio/narration-pop-digital.mp3",
@@ -650,9 +794,10 @@
     },
     {
       "id": "era-algoritmo",
-      "videoSrc": "/video/era-algoritmo.mp4",
       "brain": {
-        "regions": ["accumbens"],
+        "regions": [
+          "accumbens"
+        ],
         "label": "Núcleo accumbens · Circuito de dopamina",
         "effect": "La música algorítmica explota directamente el núcleo accumbens con recompensas cada pocos segundos: el mismo circuito de dopamina que activan la comida y las redes sociales. Placer instantáneo diseñado para que nunca dejes de scrollear, pero sin profundidad."
       },
@@ -666,7 +811,15 @@
       "icon": "⟡",
       "description": "TikTok no reproduce canciones completas: reproduce fragmentos de 15 segundos optimizados para el engagement. El algoritmo de Spotify decide qué música existe y cuál desaparece. Los artistas componen canciones diseñadas para ser virales, no para ser profundas. Los ganchos aparecen en los primeros 5 segundos porque el oyente promedio salta en 7. La hipersexualización es una estrategia de marketing calculada. La música dejó de ser arte y se convirtió en contenido.",
       "intellectualImpact": "Un estudio de la Universidad de Harvard (2020) encontró que las canciones pop contemporáneas tienen vocabularios 40% más pequeños que las canciones pop de los años 80. La complejidad armónica promedio de los Billboard Top 10 ha caído un 60% entre 1960 y 2020. La pregunta que nos debemos hacer: ¿La música empobrecida empobrece al oyente, o es el oyente empobrecido quien pide música empobrecida?",
-      "keyFigures": ["Bad Bunny", "Billie Eilish", "The Weeknd", "Olivia Rodrigo", "Drake", "Sabrina Carpenter", "Taylor Swift"],
+      "keyFigures": [
+        "Bad Bunny",
+        "Billie Eilish",
+        "The Weeknd",
+        "Olivia Rodrigo",
+        "Drake",
+        "Sabrina Carpenter",
+        "Taylor Swift"
+      ],
       "characteristics": [
         "Canciones diseñadas para algoritmos, no para personas",
         "Fragmentación extrema de la atención (15-30 segundos)",
@@ -680,8 +833,10 @@
           "year": 2019,
           "youtubeSearch": "Billie Eilish bad guy official video",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Billie grabó su primer álbum en su cuarto con su hermano. Prueba de que la democratización tecnológica también puede producir arte genuino."
+          "audioSrc": "/audio/songs/billieaudio.mp3",
+          "image": "/images/songs/40billie.webp",
+          "significance": "Billie grabó su primer álbum en su cuarto con su hermano. Prueba de que la democratización tecnológica también puede producir arte genuino.",
+          "story": "Billie la grabó en 2019 en el dormitorio de su hermano Finneas, en su casa de Los Ángeles, con un presupuesto mínimo. Su susurro y el bajo distorsionado rompieron todas las reglas del pop y probaron que un éxito mundial puede nacer en una habitación."
         },
         {
           "title": "Blinding Lights",
@@ -689,8 +844,10 @@
           "year": 2019,
           "youtubeSearch": "The Weeknd Blinding Lights official",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "La canción más escuchada de la historia de Spotify. Nostalgia ochentera empaquetada en producción digital perfecta."
+          "audioSrc": "/audio/songs/theweekndaudio.mp3",
+          "image": "/images/songs/41theweeknd.webp",
+          "significance": "La canción más escuchada de la historia de Spotify. Nostalgia ochentera empaquetada en producción digital perfecta.",
+          "story": "The Weeknd la diseñó como un homenaje al synth-pop de los años ochenta. Es la canción más reproducida en la historia de Spotify: su nostalgia empaquetada en una producción digital impecable la convirtió en el himno de toda una época."
         },
         {
           "title": "Espresso",
@@ -698,17 +855,21 @@
           "year": 2024,
           "youtubeSearch": "Sabrina Carpenter Espresso official video",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "El hit del verano 2024. Catchy, producido algorítmicamente, diseñado para TikTok. Tiene todo excepto profundidad."
+          "audioSrc": "/audio/songs/sabrinaaudio.mp3",
+          "image": "/images/songs/42sabrina.webp",
+          "significance": "El hit del verano 2024. Catchy, producido algorítmicamente, diseñado para TikTok. Tiene todo excepto profundidad.",
+          "story": "Sabrina la lanzó en 2024 y se volvió el hit del verano. Con un juego de palabras pegadizo (\"that's that me espresso\") pensado para hacerse viral en TikTok, es el ejemplo perfecto del pop de la era del algoritmo: pegadizo, ligero e instantáneo."
         },
         {
-          "title": "un verano sin ti (El Apagón)",
+          "title": "El Apagón",
           "artist": "Bad Bunny",
           "year": 2022,
           "youtubeSearch": "Bad Bunny El Apagon",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Un momento de genuina conciencia política en la era del algoritmo. Excepción que confirma la regla."
+          "audioSrc": "/audio/songs/badbunnyaudio.mp3",
+          "image": "/images/songs/43badbunny.webp",
+          "significance": "Un momento de genuina conciencia política en la era del algoritmo. Excepción que confirma la regla.",
+          "story": "Del álbum \"Un Verano Sin Ti\" (2022). Lo que empieza como una fiesta se transforma a la mitad en un alegato contra los apagones eléctricos y la gentrificación en Puerto Rico, con la voz de su pareja Gabriela. Un raro momento de conciencia política en la era del streaming."
         },
         {
           "title": "drivers license",
@@ -716,8 +877,10 @@
           "year": 2021,
           "youtubeSearch": "Olivia Rodrigo drivers license official",
           "youtubeId": "",
-          "audioSrc": "",
-          "significance": "Viralizó en TikTok antes de ser lanzada oficialmente. El nuevo ciclo de vida de una canción."
+          "audioSrc": "/audio/songs/oliviaaudio.mp3",
+          "image": "/images/songs/44oliviarodrigo.webp",
+          "significance": "Viralizó en TikTok antes de ser lanzada oficialmente. El nuevo ciclo de vida de una canción.",
+          "story": "Olivia, actriz de Disney de diecisiete años, la escribió sobre su primera ruptura justo cuando obtuvo su licencia de conducir. Se viralizó en TikTok antes de su lanzamiento oficial en 2021 y batió récords de Spotify en días, mostrando el nuevo ciclo de vida de una canción."
         }
       ],
       "narrationSrc": "/audio/narration-algoritmo.mp3",

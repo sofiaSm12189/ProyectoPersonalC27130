@@ -13,7 +13,12 @@
       <div class="hero__panel hero__panel--classical">
         <div class="hero__vignette"></div>
         <div class="hero__panel-content">
-          <div class="hero__portrait-frame hero__portrait-frame--gold">
+          <div
+            class="hero__portrait-frame hero__portrait-frame--gold"
+            @mouseenter="hoverPlay('tchaikovsky')"
+            @mouseleave="hoverStop('tchaikovsky')"
+            title="Pasa el cursor para escuchar"
+          >
             <img
               :src="tchaikovskyImg"
               alt="Piotr Ilyich Tchaikovsky"
@@ -24,6 +29,7 @@
               <span class="hero__initial">T</span>
               <span class="hero__note">𝄞</span>
             </div>
+            <span class="hero__audio-badge" aria-hidden="true">♪</span>
           </div>
 
           <div class="hero__meta">
@@ -48,7 +54,12 @@
       <div class="hero__panel hero__panel--modern">
         <div class="hero__vignette hero__vignette--right"></div>
         <div class="hero__panel-content hero__panel-content--right">
-          <div class="hero__portrait-frame hero__portrait-frame--purple">
+          <div
+            class="hero__portrait-frame hero__portrait-frame--purple"
+            @mouseenter="hoverPlay('sabrina')"
+            @mouseleave="hoverStop('sabrina')"
+            title="Pasa el cursor para escuchar"
+          >
             <img
               :src="sabrinaImg"
               alt="Sabrina Carpenter"
@@ -61,6 +72,7 @@
               <span class="hero__initial hero__initial--modern">S</span>
               <span class="hero__note hero__note--modern">♪</span>
             </div>
+            <span class="hero__audio-badge hero__audio-badge--modern" aria-hidden="true">♪</span>
           </div>
 
           <div class="hero__meta hero__meta--right">
@@ -79,7 +91,16 @@
       </div>
     </div>
 
-    <!-- ── Bloque de título principal ── -->
+    <div class="hero__emit-global" aria-hidden="true">
+      <span
+        v-for="p in particles"
+        :key="p.id"
+        class="hero__emit"
+        :style="emitStyle(p)"
+        >{{ p.sym }}</span
+      >
+    </div>
+
     <div class="hero__title-block">
       <p class="hero__eyebrow">Un análisis desde 1800 hasta hoy</p>
       <h1 class="hero__title">
@@ -96,7 +117,6 @@
       </a>
     </div>
 
-    <!-- Indicador de scroll -->
     <div class="hero__scroll-indicator" aria-hidden="true">
       <div class="hero__scroll-bar"></div>
     </div>
@@ -104,10 +124,12 @@
 </template>
 
 <script setup>
+import { ref, onUnmounted } from "vue";
+import { connectAnalyser, getLevel } from "../composables/useAudioAnalyser.js";
+
 const tchaikovskyImg = "/images/tchaikovsky.webp";
 const sabrinaImg = "/images/sabrina.webp";
 
-// Sonido de click para el botón "Comenzar el viaje"
 const clickSound =
   typeof Audio !== "undefined" ? new Audio("/audio/click.mp3") : null;
 function playClick() {
@@ -116,6 +138,103 @@ function playClick() {
   clickSound.volume = 0.6;
   clickSound.play().catch(() => {});
 }
+
+const hasAudio = typeof Audio !== "undefined";
+const tchaikovskyAudio = hasAudio
+  ? new Audio("/audio/audio1tchaikovsky.mp3")
+  : null;
+const sabrinaAudio = hasAudio ? new Audio("/audio/audio1sabrina.mp3") : null;
+[tchaikovskyAudio, sabrinaAudio].forEach((a) => {
+  if (a) {
+    a.preload = "none";
+    a.volume = 0.7;
+  }
+});
+
+const NOTES = ["♩", "♪", "♫", "♬", "𝄞", "𝄢", "♭", "♯", "♮"];
+const MODERN = ["❤️", "💖", "✨", "💫", "📱", "💅", "🎀", "💋", "🔥", "⭐", "🎧", "💕"];
+
+const particles = ref([]);
+let pid = 0;
+let rafId = null;
+let activeSide = null;
+const analysers = {};
+
+function spawn(which, intensity) {
+  const isT = which === "tchaikovsky";
+  const pool = isT ? NOTES : MODERN;
+  const baseX = isT ? 3 + Math.random() * 20 : 77 + Math.random() * 20;
+  const p = {
+    id: pid++,
+    sym: pool[Math.floor(Math.random() * pool.length)],
+    left: baseX,
+    bottom: 26 + Math.random() * 30,
+    size: 1 + intensity * 2.1 + Math.random() * 0.5,
+    dur: 3.2 + Math.random() * 2.4,
+    rise: 300 + intensity * 280 + Math.random() * 340,
+    drift: (Math.random() - 0.5) * (isT ? 360 : 360),
+    rot: (Math.random() - 0.5) * 90,
+    hue: isT ? 38 + Math.random() * 24 : 320 + Math.random() * 40,
+    isEmoji: !isT,
+  };
+  particles.value.push(p);
+  setTimeout(() => {
+    particles.value = particles.value.filter((x) => x.id !== p.id);
+  }, p.dur * 1000);
+}
+
+function loop() {
+  if (!activeSide) return;
+  const obj = analysers[activeSide];
+  let level = obj ? getLevel(obj) : 0;
+  if (!obj) level = 0.25 + Math.random() * 0.3;
+  if (level > 0.12 && particles.value.length < 55 && Math.random() < level * 0.7)
+    spawn(activeSide, level);
+  rafId = requestAnimationFrame(loop);
+}
+
+function hoverPlay(which) {
+  const [target, other] =
+    which === "tchaikovsky"
+      ? [tchaikovskyAudio, sabrinaAudio]
+      : [sabrinaAudio, tchaikovskyAudio];
+  if (other) other.pause();
+  if (target) {
+    if (analysers[which] === undefined) analysers[which] = connectAnalyser(target);
+    target.play().catch(() => {});
+  }
+  activeSide = which;
+  if (!rafId) rafId = requestAnimationFrame(loop);
+}
+function hoverStop(which) {
+  const target = which === "tchaikovsky" ? tchaikovskyAudio : sabrinaAudio;
+  if (target) target.pause();
+  if (activeSide === which) {
+    activeSide = null;
+    if (rafId) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  }
+}
+
+function emitStyle(p) {
+  return {
+    left: p.left + "%",
+    bottom: p.bottom + "%",
+    fontSize: p.size + "rem",
+    color: p.isEmoji ? undefined : `hsl(${p.hue}, 90%, 62%)`,
+    animationDuration: p.dur + "s",
+    "--drift": p.drift + "px",
+    "--rise": p.rise + "px",
+    "--rot": p.rot + "deg",
+  };
+}
+
+onUnmounted(() => {
+  if (rafId) cancelAnimationFrame(rafId);
+  [tchaikovskyAudio, sabrinaAudio].forEach((a) => a && a.pause());
+});
 
 function particleStyle(n) {
   return {
@@ -200,13 +319,12 @@ function particleStyle(n) {
 .hero__panel--modern {
   background: radial-gradient(
     ellipse at 60% 40%,
-    #0d0025 0%,
-    #08001a 60%,
+    #1a0012 0%,
+    #12000c 60%,
     #040408 100%
   );
 }
 
-/* Viñeta que se funde hacia el centro */
 .hero__vignette {
   position: absolute;
   inset: 0;
@@ -226,7 +344,6 @@ function particleStyle(n) {
   );
 }
 
-/* Resplandor ambiental por panel */
 .hero__panel--classical::after {
   content: "";
   position: absolute;
@@ -244,7 +361,7 @@ function particleStyle(n) {
   inset: 0;
   background: radial-gradient(
     ellipse at 50% 35%,
-    rgba(192, 132, 252, 0.12) 0%,
+    rgba(244, 114, 182, 0.12) 0%,
     transparent 65%
   );
   pointer-events: none;
@@ -266,12 +383,76 @@ function particleStyle(n) {
   padding: 60px 56px 160px 40px;
 }
 
-/* ── Marco del retrato ───────────────────────────────── */
 .hero__portrait-frame {
   position: relative;
   width: 260px;
   height: 340px;
   flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.4s var(--ease-expo);
+}
+.hero__portrait-frame:hover {
+  transform: scale(1.02);
+}
+
+.hero__audio-badge {
+  position: absolute;
+  bottom: -14px;
+  right: -14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--gold-300);
+  background: var(--deep);
+  border: 1px solid var(--gold-700);
+  box-shadow: 0 0 14px rgba(201, 168, 76, 0.3);
+  z-index: 5;
+  animation: badgePulse 2.2s ease-in-out infinite;
+  transition: transform 0.3s, color 0.3s, border-color 0.3s;
+}
+.hero__audio-badge--modern {
+  color: var(--pink-glow);
+  border-color: var(--pink-glow);
+  box-shadow: 0 0 14px rgba(244, 114, 182, 0.3);
+}
+.hero__portrait-frame:hover .hero__audio-badge {
+  transform: scale(1.2);
+  color: var(--gold-100);
+}
+.hero__portrait-frame--purple:hover .hero__audio-badge--modern {
+  color: #fff;
+}
+@keyframes badgePulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+.hero__emit-global {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 5;
+}
+.hero__emit {
+  position: absolute;
+  line-height: 1;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation-name: emitRise;
+  animation-timing-function: cubic-bezier(0.25, 0.5, 0.4, 1);
+  animation-fill-mode: forwards;
+  filter: drop-shadow(0 0 8px currentColor);
+}
+@keyframes emitRise {
+  0%   { opacity: 0; transform: translate(0, 0) scale(0.3) rotate(0deg); }
+  15%  { opacity: 1; }
+  80%  { opacity: 0.85; }
+  100% { opacity: 0; transform: translate(var(--drift), calc(-1 * var(--rise))) scale(1.3) rotate(var(--rot)); }
 }
 
 .hero__portrait-frame--gold {
@@ -281,8 +462,8 @@ function particleStyle(n) {
 }
 .hero__portrait-frame--purple {
   box-shadow:
-    0 0 0 1px var(--purple-mid),
-    0 0 32px rgba(192, 132, 252, 0.25);
+    0 0 0 1px var(--pink-glow),
+    0 0 32px rgba(244, 114, 182, 0.25);
 }
 
 .hero__portrait {
@@ -314,7 +495,7 @@ function particleStyle(n) {
   z-index: 1;
 }
 .hero__portrait-placeholder--modern {
-  background: linear-gradient(180deg, #0d0025 0%, #04040a 100%);
+  background: linear-gradient(180deg, #1a0012 0%, #04040a 100%);
 }
 
 .hero__initial {
@@ -326,8 +507,8 @@ function particleStyle(n) {
   text-shadow: 0 0 20px var(--gold-700);
 }
 .hero__initial--modern {
-  color: var(--purple-glow);
-  text-shadow: 0 0 20px var(--purple-mid);
+  color: var(--pink-glow);
+  text-shadow: 0 0 20px var(--pink-glow);
 }
 
 .hero__note {
@@ -336,7 +517,7 @@ function particleStyle(n) {
   opacity: 0.4;
 }
 .hero__note--modern {
-  color: var(--purple-glow);
+  color: var(--pink-glow);
 }
 
 .hero__meta {
@@ -357,7 +538,7 @@ function particleStyle(n) {
   color: var(--gold-700);
 }
 .hero__year-tag--modern {
-  color: var(--purple-mid);
+  color: var(--pink-glow);
 }
 
 .hero__composer-name {
@@ -390,7 +571,7 @@ function particleStyle(n) {
   padding-left: 12px;
 }
 .hero__quote--right {
-  border-right: 2px solid var(--purple-glow);
+  border-right: 2px solid var(--pink-glow);
   padding-right: 12px;
 }
 
@@ -411,7 +592,7 @@ function particleStyle(n) {
   background: linear-gradient(to bottom, transparent, var(--gold-500));
 }
 .hero__divider-line--bottom {
-  background: linear-gradient(to bottom, var(--purple-glow), transparent);
+  background: linear-gradient(to bottom, var(--pink-glow), transparent);
 }
 
 .hero__divider-icon {
@@ -559,15 +740,13 @@ function particleStyle(n) {
 }
 
 @media (max-width: 900px) {
-  /* En móvil el hero crece de forma natural y fluye en vertical:
-     foto Tchaikovsky → divisor → foto Sabrina → bloque de título */
+
   .hero {
     height: auto;
     min-height: 100vh;
     justify-content: flex-start;
   }
 
-  /* El split deja de ser absoluto y pasa al flujo normal */
   .hero__split {
     position: relative;
     inset: auto;
@@ -601,7 +780,6 @@ function particleStyle(n) {
     height: 218px;
   }
 
-  /* Las viñetas laterales no aplican en columna */
   .hero__vignette,
   .hero__vignette--right {
     display: none;
@@ -632,7 +810,6 @@ function particleStyle(n) {
     );
   }
 
-  /* El título fluye debajo de los retratos, con fondo sólido */
   .hero__title-block {
     position: relative;
     background: var(--void);

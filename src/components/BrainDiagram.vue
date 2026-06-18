@@ -1,96 +1,47 @@
 <template>
   <figure class="brain" :style="{ '--accent': accentColor }">
-    <svg
-      class="brain__svg"
-      viewBox="0 0 460 380"
-      role="img"
-      :aria-label="`Cerebro: región activa ${label}`"
-    >
-      <defs>
-        <!-- Blob luminoso de cada región -->
-        <radialGradient :id="`blob-${uid}`" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" :stop-color="accentColor" stop-opacity="0.85" />
-          <stop offset="45%" :stop-color="accentColor" stop-opacity="0.35" />
-          <stop offset="100%" :stop-color="accentColor" stop-opacity="0" />
-        </radialGradient>
-        <!-- Recorte con la forma del cerebro para las circunvoluciones -->
-        <clipPath :id="`cortex-${uid}`">
-          <path :d="cortexPath" />
-        </clipPath>
-      </defs>
+    <div class="brain__stage">
+      <svg class="brain__fallback" viewBox="0 0 400 300" aria-hidden="true">
+        <path
+          d="M 110,210 C 86,206 74,186 84,166 C 66,154 64,124 84,112
+             C 86,86 112,72 140,80 C 158,60 196,58 218,76
+             C 244,58 286,60 308,82 C 338,78 366,100 364,134
+             C 380,156 372,190 348,200 C 354,218 338,234 316,228
+             C 300,242 272,240 260,222 C 242,234 214,234 200,220
+             C 176,234 142,232 124,216 C 116,214 112,212 110,210 Z"
+        />
+      </svg>
 
-      <!-- Relleno suave del cerebro -->
-      <path class="brain__fill" :d="cortexPath" />
-
-      <!-- Circunvoluciones (recortadas a la forma) -->
-      <g :clip-path="`url(#cortex-${uid})`" class="brain__gyri">
-        <path v-for="(d, i) in gyriLines" :key="i" :d="d" />
-      </g>
-
-      <!-- Surco lateral (separa el lóbulo temporal) -->
-      <path
-        class="brain__sulcus"
-        :clip-path="`url(#cortex-${uid})`"
-        d="M 120,214 C 168,232 238,236 286,212"
-      />
-      <!-- Surco central -->
-      <path
-        class="brain__sulcus"
-        :clip-path="`url(#cortex-${uid})`"
-        d="M 214,96 C 206,132 198,160 188,196"
+      <img
+        v-show="!imgFailed"
+        class="brain__image"
+        :src="brainImg"
+        alt="Cerebro humano"
+        @error="imgFailed = true"
+        @load="imgFailed = false"
       />
 
-      <!-- Contorno del cerebro -->
-      <path class="brain__outline" :d="cortexPath" />
+      <p v-if="imgFailed" class="brain__hint-img">
+        Sube una imagen de cerebro a<br /><code>public/images/brain.webp</code>
+      </p>
 
-      <!-- Cerebelo -->
-      <path
-        class="brain__cerebellum"
-        d="M 300,214 C 332,212 356,230 350,254 C 344,278 312,280 292,266 C 280,256 282,224 300,214 Z"
-      />
-      <path
-        class="brain__cerebellum-folds"
-        d="M 300,228 Q 322,230 344,230 M 296,240 Q 320,244 348,242 M 298,252 Q 320,256 340,254 M 304,264 Q 320,266 332,264"
-      />
-
-      <!-- Tronco encefálico -->
-      <path
-        class="brain__stem"
-        d="M 250,232 C 254,260 258,286 246,306 C 242,314 234,314 232,306 C 228,284 234,256 238,234"
-      />
-
-      <!-- ══ Regiones: puntos tenues para TODAS, glow para las ACTIVAS ══ -->
-      <g
+      <div
         v-for="r in allRegions"
         :key="r.key"
-        class="brain__region"
+        class="brain__zone"
         :class="{ active: isActive(r.key) }"
+        :style="{ left: r.x + '%', top: r.y + '%' }"
       >
-        <!-- Halo luminoso (solo activas) -->
-        <circle
-          v-if="isActive(r.key)"
-          class="brain__blob"
-          :cx="r.x"
-          :cy="r.y"
-          :r="r.deep ? 34 : 40"
-          :fill="`url(#blob-${uid})`"
-        />
-        <!-- Núcleo del punto -->
-        <circle
-          class="brain__core"
-          :cx="r.x"
-          :cy="r.y"
-          :r="isActive(r.key) ? 6 : 2.5"
-        />
-      </g>
-    </svg>
+        <span class="brain__zone-glow"></span>
+        <span class="brain__zone-dot"></span>
+      </div>
+    </div>
 
     <figcaption class="brain__caption">
       <span class="brain__pulse-dot"></span>
       {{ label }}
     </figcaption>
 
-    <!-- Funciones de las regiones activas (la "explicación extra") -->
     <ul class="brain__legend">
       <li v-for="r in activeRegionData" :key="r.key" class="brain__legend-item">
         <span class="brain__legend-name">{{ r.label }}</span>
@@ -101,59 +52,28 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { ref, computed } from 'vue'
 
 const props = defineProps({
-  regions:     { type: Array,  default: () => [] },
-  label:       { type: String, default: '' },
+  regions: { type: Array, default: () => [] },
+  label: { type: String, default: '' },
   accentColor: { type: String, default: '#c9a84c' },
 })
 
-const uid = Math.random().toString(36).slice(2, 8)
+const brainImg = '/images/brain.webp'
+const imgFailed = ref(false)
 
-// Contorno del cerebro (vista lateral, frente a la izquierda)
-const cortexPath =
-  'M 126,214 ' +
-  'C 104,210 94,190 102,170 ' +
-  'C 84,158 82,130 100,118 ' +
-  'C 102,94 124,80 150,86 ' +
-  'C 166,68 198,66 218,82 ' +
-  'C 242,66 280,68 300,86 ' +
-  'C 326,80 352,98 354,128 ' +
-  'C 368,148 362,178 342,190 ' +
-  'C 348,206 334,220 314,214 ' +
-  'C 300,226 276,224 266,208 ' +
-  'C 252,218 230,218 218,206 ' +
-  'C 198,218 168,218 152,204 ' +
-  'C 140,212 130,214 126,214 Z'
-
-// Circunvoluciones: líneas onduladas horizontales recortadas al cerebro
-const gyriLines = computed(() => {
-  const lines = []
-  for (let y = 104; y <= 208; y += 12) {
-    const amp = 6
-    let d = `M 80 ${y}`
-    for (let x = 80; x <= 372; x += 22) {
-      const dir = Math.floor(x / 22) % 2 === 0 ? -amp : amp
-      d += ` Q ${x + 11} ${y + dir} ${x + 22} ${y}`
-    }
-    lines.push(d)
-  }
-  return lines
-})
-
-// Mapa de regiones: posición + nombre + función (la explicación extra)
 const allRegions = [
-  { key: 'prefrontal',  x: 138, y: 150, deep: false, label: 'Corteza prefrontal', fn: 'Razonamiento, planificación y análisis' },
-  { key: 'motor',       x: 214, y: 116, deep: false, label: 'Corteza motora',     fn: 'Movimiento y respuesta al ritmo' },
-  { key: 'parietal',    x: 264, y: 128, deep: false, label: 'Lóbulo parietal',    fn: 'Procesamiento espacial y matemático' },
-  { key: 'occipital',   x: 326, y: 158, deep: false, label: 'Corteza visual',     fn: 'Imágenes mentales y color' },
-  { key: 'temporal',    x: 196, y: 196, deep: false, label: 'Corteza auditiva',   fn: 'Procesamiento del sonido y melodía' },
-  { key: 'broca',       x: 150, y: 190, deep: false, label: 'Área de Broca',      fn: 'Lenguaje, habla y letras' },
-  { key: 'limbic',      x: 224, y: 168, deep: true,  label: 'Sistema límbico',    fn: 'Emociones profundas e instinto' },
-  { key: 'hippocampus', x: 250, y: 186, deep: true,  label: 'Hipocampo',          fn: 'Memoria a largo plazo' },
-  { key: 'accumbens',   x: 180, y: 180, deep: true,  label: 'Núcleo accumbens',   fn: 'Placer y recompensa (dopamina)' },
-  { key: 'cerebellum',  x: 318, y: 234, deep: false, label: 'Cerebelo',           fn: 'Coordinación y sentido del compás' },
+  { key: 'prefrontal', x: 15, y: 42, label: 'Corteza prefrontal', fn: 'Razonamiento, planificación y análisis' },
+  { key: 'broca', x: 19, y: 60, label: 'Área de Broca', fn: 'Lenguaje, habla y letras' },
+  { key: 'motor', x: 44, y: 33, label: 'Corteza motora', fn: 'Movimiento y respuesta al ritmo' },
+  { key: 'parietal', x: 60, y: 35, label: 'Lóbulo parietal', fn: 'Procesamiento espacial y matemático' },
+  { key: 'occipital', x: 85, y: 46, label: 'Corteza visual', fn: 'Imágenes mentales y color' },
+  { key: 'temporal', x: 40, y: 62, label: 'Corteza auditiva', fn: 'Procesamiento del sonido y melodía' },
+  { key: 'limbic', x: 49, y: 51, label: 'Sistema límbico', fn: 'Emociones profundas e instinto' },
+  { key: 'hippocampus', x: 58, y: 57, label: 'Hipocampo', fn: 'Memoria a largo plazo' },
+  { key: 'accumbens', x: 36, y: 54, label: 'Núcleo accumbens', fn: 'Placer y recompensa (dopamina)' },
+  { key: 'cerebellum', x: 71, y: 75, label: 'Cerebelo', fn: 'Coordinación y sentido del compás' },
 ]
 
 function isActive(region) {
@@ -171,93 +91,104 @@ const activeRegionData = computed(() =>
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   width: 100%;
   max-width: 380px;
 }
 
-.brain__svg {
+.brain__stage {
+  position: relative;
   width: 100%;
-  height: auto;
-  overflow: visible;
+  aspect-ratio: 1 / 1;
 }
 
-/* Relleno del cerebro */
-.brain__fill {
-  fill: rgba(255, 255, 255, 0.025);
+.brain__fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
-
-/* Circunvoluciones */
-.brain__gyri path {
-  fill: none;
-  stroke: var(--txt-dim);
-  stroke-width: 1.1;
-  opacity: 0.4;
-  stroke-linecap: round;
-}
-
-/* Surcos principales */
-.brain__sulcus {
-  fill: none;
-  stroke: var(--txt-dim);
-  stroke-width: 1.6;
-  opacity: 0.55;
-  stroke-linecap: round;
-}
-
-/* Contorno */
-.brain__outline {
-  fill: none;
-  stroke: var(--txt-primary);
-  stroke-width: 2;
-  opacity: 0.7;
-  stroke-linejoin: round;
-}
-
-/* Cerebelo */
-.brain__cerebellum {
+.brain__fallback path {
   fill: rgba(255, 255, 255, 0.02);
-  stroke: var(--txt-primary);
-  stroke-width: 1.8;
-  opacity: 0.6;
-  stroke-linejoin: round;
-}
-.brain__cerebellum-folds {
-  fill: none;
-  stroke: var(--txt-dim);
-  stroke-width: 1;
-  opacity: 0.5;
-}
-
-/* Tronco */
-.brain__stem {
-  fill: none;
-  stroke: var(--txt-primary);
-  stroke-width: 1.8;
-  opacity: 0.55;
+  stroke: var(--txt-muted);
+  stroke-width: 2;
   stroke-linejoin: round;
 }
 
-/* Regiones */
-.brain__core {
-  fill: var(--txt-dim);
-  opacity: 0.5;
-  transition: fill 0.5s, opacity 0.5s, r 0.5s;
+.brain__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(1.08) contrast(1.12);
+  opacity: 0.92;
 }
-.brain__region.active .brain__core {
-  fill: var(--accent);
+
+.brain__hint-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--txt-muted);
+  line-height: 1.6;
+}
+.brain__hint-img code {
+  color: var(--accent);
+  font-size: 0.68rem;
+}
+
+.brain__zone {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.brain__zone-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--txt-dim);
+  opacity: 0.3;
+  transition: all 0.5s ease;
+}
+.brain__zone-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.6s ease, width 0.6s ease, height 0.6s ease;
+}
+
+.brain__zone.active .brain__zone-dot {
+  width: 9px;
+  height: 9px;
+  background: var(--accent);
   opacity: 1;
+  box-shadow: 0 0 10px var(--accent);
 }
-.brain__blob {
-  animation: blobPulse 2.6s ease-in-out infinite;
-  transform-origin: center;
+.brain__zone.active .brain__zone-glow {
+  width: 78px;
+  height: 78px;
+  opacity: 0.6;
+  animation: zonePulse 2.4s ease-in-out infinite;
 }
-@keyframes blobPulse {
-  0%, 100% { opacity: 0.75; }
-  50%       { opacity: 1; }
+@keyframes zonePulse {
+  0%, 100% { opacity: 0.42; transform: translate(-50%, -50%) scale(0.9); }
+  50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.1); }
 }
 
-/* Caption (nombre de la región) */
 .brain__caption {
   display: flex;
   align-items: center;
@@ -280,11 +211,10 @@ const activeRegionData = computed(() =>
   flex-shrink: 0;
 }
 @keyframes dotPulse {
-  0%, 100% { transform: scale(1);   opacity: 1; }
-  50%       { transform: scale(1.5); opacity: 0.5; }
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
 }
 
-/* Leyenda de funciones (explicación extra) */
 .brain__legend {
   list-style: none;
   margin: 4px 0 0;
@@ -308,7 +238,6 @@ const activeRegionData = computed(() =>
   font-size: 0.74rem;
   font-weight: 600;
   color: var(--accent);
-  letter-spacing: 0.3px;
 }
 .brain__legend-fn {
   font-size: 0.74rem;

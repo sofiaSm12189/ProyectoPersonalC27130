@@ -5,16 +5,14 @@
     :class="[isLeft ? 'era--left' : 'era--right', { 'is-visible': visible }]"
     :style="cssVars"
   >
-    <!-- Nodo sobre la línea central del timeline -->
+
     <div class="era__node" aria-hidden="true">
       <span class="era__node-icon">{{ era.icon }}</span>
       <span class="era__node-pulse"></span>
     </div>
 
-    <!-- Conector del nodo a la tarjeta -->
     <div class="era__connector" aria-hidden="true"></div>
 
-    <!-- Cerebro: aparece en el lado opuesto a la tarjeta -->
     <aside v-if="era.brain" class="era__brain-wrap">
       <BrainDiagram
         :regions="era.brain.regions"
@@ -24,7 +22,6 @@
       <p class="era__brain-effect">{{ era.brain.effect }}</p>
     </aside>
 
-    <!-- Tarjeta de contenido -->
     <div class="era__card">
       <header class="era__header">
         <span class="era__years">{{ era.yearStart }} — {{ era.yearEnd }}</span>
@@ -34,18 +31,15 @@
 
       <p class="era__description">{{ era.description }}</p>
 
-      <!-- Características de la época -->
       <ul class="era__characteristics">
         <li v-for="(c, i) in era.characteristics" :key="i">{{ c }}</li>
       </ul>
 
-      <!-- Impacto intelectual (bloque destacado) -->
       <div class="era__impact">
         <span class="era__impact-label">Música y pensamiento</span>
         <p>{{ era.intellectualImpact }}</p>
       </div>
 
-      <!-- Figuras clave -->
       <div class="era__figures">
         <span
           v-for="(f, i) in era.keyFigures"
@@ -54,7 +48,6 @@
         >{{ f }}</span>
       </div>
 
-      <!-- Canciones que definieron la época -->
       <div class="era__songs">
         <h4 class="era__songs-title">
           <span class="era__songs-icon">♪</span>
@@ -122,7 +115,7 @@ onUnmounted(() => observer && observer.disconnect())
 </script>
 
 <style scoped>
-/* ── Contenedor de la época ──────────────────────────── */
+
 .era {
   position: relative;
   display: flex;
@@ -135,7 +128,6 @@ onUnmounted(() => observer && observer.disconnect())
 .era--left  { justify-content: flex-start; }
 .era--right { justify-content: flex-end; }
 
-/* ── Nodo central (sobre la línea del timeline) ──────── */
 .era__node {
   position: absolute;
   left: 50%;
@@ -183,7 +175,6 @@ onUnmounted(() => observer && observer.disconnect())
   100% { opacity: 0;   transform: scale(1.9); }
 }
 
-/* ── Conector del nodo a la tarjeta ──────────────────── */
 .era__connector {
   position: absolute;
   top: 88px;
@@ -198,7 +189,6 @@ onUnmounted(() => observer && observer.disconnect())
 .era--right .era__connector { left: 50%; }
 .era.is-visible .era__connector { opacity: 0.5; }
 
-/* ── Cerebro en el lado opuesto a la tarjeta ── */
 .era__brain-wrap {
   position: absolute;
   top: 70px;
@@ -224,7 +214,6 @@ onUnmounted(() => observer && observer.disconnect())
   font-style: italic;
 }
 
-/* ── Tarjeta ─────────────────────────────────────────── */
 .era__card {
   width: 45%;
   background: linear-gradient(155deg, var(--card-bg) 0%, var(--surface) 100%);
@@ -247,7 +236,6 @@ onUnmounted(() => observer && observer.disconnect())
     0 0 0 1px var(--accent);
 }
 
-/* Resplandor de acento en la esquina */
 .era__card::before {
   content: '';
   position: absolute;
@@ -259,7 +247,6 @@ onUnmounted(() => observer && observer.disconnect())
   border-radius: 4px;
 }
 
-/* ── Header ──────────────────────────────────────────── */
 .era__header { margin-bottom: 18px; }
 
 .era__years {
@@ -287,7 +274,6 @@ onUnmounted(() => observer && observer.disconnect())
   opacity: 0.85;
 }
 
-/* ── Descripción ─────────────────────────────────────── */
 .era__description {
   font-size: 0.92rem;
   color: var(--txt-primary);
@@ -295,7 +281,6 @@ onUnmounted(() => observer && observer.disconnect())
   margin-bottom: 22px;
 }
 
-/* ── Características ──────────────────────────────────── */
 .era__characteristics {
   list-style: none;
   margin: 0 0 22px;
@@ -320,7 +305,6 @@ onUnmounted(() => observer && observer.disconnect())
   top: 3px;
 }
 
-/* ── Impacto intelectual ─────────────────────────────── */
 .era__impact {
   background: rgba(255, 255, 255, 0.02);
   border-left: 2px solid var(--accent);
@@ -345,7 +329,6 @@ onUnmounted(() => observer && observer.disconnect())
   font-style: italic;
 }
 
-/* ── Figuras clave ───────────────────────────────────── */
 .era__figures {
   display: flex;
   flex-wrap: wrap;
@@ -365,7 +348,6 @@ onUnmounted(() => observer && observer.disconnect())
   border-color: var(--accent);
 }
 
-/* ── Canciones ───────────────────────────────────────── */
 .era__songs-title {
   display: flex;
   align-items: center;
@@ -417,7 +399,6 @@ onUnmounted(() => observer && observer.disconnect())
   border-color: var(--accent);
 }
 
-/* Botón de play de cada canción */
 .era__song-play {
   flex-shrink: 0;
   width: 32px;
@@ -483,7 +464,6 @@ onUnmounted(() => observer && observer.disconnect())
   font-style: italic;
 }
 
-/* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 860px) {
   .era,
   .era--left,
@@ -498,7 +478,6 @@ onUnmounted(() => observer && observer.disconnect())
 
   .era__connector { display: none; }
 
-  /* El cerebro fluye arriba de la tarjeta en móvil */
   .era__brain-wrap,
   .era--left .era__brain-wrap,
   .era--right .era__brain-wrap {

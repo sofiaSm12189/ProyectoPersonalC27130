@@ -1,13 +1,5 @@
 import { onMounted, onUnmounted } from 'vue'
 
-/**
- * Observa elementos con clases .reveal, .reveal-left, .reveal-right, .stagger
- * y añade .is-visible cuando entran en el viewport.
- *
- * Usa además un MutationObserver para detectar contenido que se inserta
- * de forma asíncrona (listas cargadas con fetch, bloques con v-if, etc.),
- * de modo que también esos elementos se animan correctamente.
- */
 export function useScrollReveal(rootMargin = '-80px') {
   let io = null
   let mo = null
@@ -32,10 +24,8 @@ export function useScrollReveal(rootMargin = '-80px') {
       })
     }
 
-    // Observa lo que ya existe al montar
     observeAll()
 
-    // Observa lo que Vue inserte después (contenido async)
     mo = new MutationObserver((mutations) => {
       for (const m of mutations) {
         m.addedNodes.forEach((node) => {

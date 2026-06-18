@@ -1,7 +1,6 @@
 <template>
   <section id="timeline" class="timeline-section" aria-label="Línea del tiempo musical">
 
-    <!-- Video collage de fondo según la época activa -->
     <EraBackground :era="activeEra" />
 
     <div class="section-header reveal">
@@ -15,13 +14,11 @@
       </p>
     </div>
 
-    <!-- Estado de carga -->
     <div v-if="loading" class="timeline-section__loading">
       <span>Cargando la historia de la música</span>
       <span class="loading-dots">...</span>
     </div>
 
-    <!-- Línea del tiempo con tarjetas alternadas -->
     <div v-else class="timeline">
       <div class="timeline__line" aria-hidden="true">
         <div class="timeline__line-progress" :style="{ height: progress + '%' }"></div>
@@ -35,17 +32,15 @@
         @select-song="(song) => openSong(song, era)"
       />
 
-      <!-- Cierre de la línea -->
       <div class="timeline__end reveal" aria-hidden="true">
         <span class="timeline__end-dot"></span>
         <p class="timeline__end-text">¿Y ahora hacia dónde va la música?</p>
       </div>
     </div>
 
-    <!-- Modal de canción (info + reproductor) -->
     <SongModal
       :song="selectedSong"
-      :era-name="selectedEraName"
+      :era="selectedEraData"
       :accent-color="selectedAccent"
       @close="selectedSong = null"
     />
@@ -63,21 +58,18 @@ const eras    = ref([])
 const loading = ref(true)
 const progress = ref(0)
 
-// Época activa según scroll (controla el video de fondo)
 const activeEra = ref(null)
 
-// Canción seleccionada para el modal
 const selectedSong    = ref(null)
-const selectedEraName = ref('')
+const selectedEraData = ref(null)
 const selectedAccent  = ref('#c9a84c')
 
 function openSong(song, era) {
   selectedSong.value    = song
-  selectedEraName.value = era.name
+  selectedEraData.value = era
   selectedAccent.value  = era.accentColor
 }
 
-// Posiciones cacheadas de cada época (se recalculan en resize)
 let cardRanges = []
 function measureCards() {
   cardRanges = [...document.querySelectorAll('.timeline .era')].map((c) => {
@@ -90,7 +82,6 @@ function measureCards() {
 function onScroll() {
   const vh = window.innerHeight
 
-  // Barra de progreso de la línea del tiempo
   const tl = document.querySelector('.timeline')
   if (tl) {
     const rect = tl.getBoundingClientRect()
@@ -99,7 +90,6 @@ function onScroll() {
     progress.value = total > 0 ? (scrolled / total) * 100 : 0
   }
 
-  // Época cuyo rango contiene el centro del viewport → controla el fondo
   const centerY = window.scrollY + vh / 2
   for (let i = 0; i < cardRanges.length; i++) {
     if (centerY >= cardRanges[i].top && centerY < cardRanges[i].bottom) {
@@ -136,11 +126,10 @@ onUnmounted(() => {
 .timeline-section {
   position: relative;
   padding: 0 24px 60px;
-  /* Fondo transparente para dejar ver el video collage de cada época */
+
   background: transparent;
 }
 
-/* El contenido va por encima del fondo */
 .timeline-section > .section-header,
 .timeline-section > .timeline,
 .timeline-section > .timeline-section__loading {
@@ -166,7 +155,6 @@ onUnmounted(() => {
 .loading-dots { animation: blink 1.2s step-start infinite; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-/* ── Timeline ────────────────────────────────────────── */
 .timeline {
   position: relative;
   max-width: 1180px;
@@ -174,7 +162,6 @@ onUnmounted(() => {
   padding: 20px 0 60px;
 }
 
-/* Línea vertical central */
 .timeline__line {
   position: absolute;
   top: 0;
@@ -203,7 +190,6 @@ onUnmounted(() => {
   transition: height 0.2s linear;
 }
 
-/* Cierre del timeline */
 .timeline__end {
   text-align: center;
   padding-top: 40px;
@@ -231,7 +217,6 @@ onUnmounted(() => {
   color: var(--txt-dim);
 }
 
-/* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 860px) {
   .timeline__line { left: 22px; transform: none; }
 }

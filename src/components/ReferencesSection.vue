@@ -12,7 +12,6 @@
       </p>
     </div>
 
-    <!-- Cita destacada -->
     <blockquote class="refs__pullquote reveal">
       <p>
         "La música es la actividad humana que involucra y coordina más regiones
@@ -21,7 +20,6 @@
       <cite>— Daniel J. Levitin, neurocientífico</cite>
     </blockquote>
 
-    <!-- Lista de referencias académicas -->
     <div v-if="references.length" class="refs__list stagger">
       <article
         v-for="ref in references"
@@ -49,7 +47,6 @@
 
     <p v-else class="refs__loading">Cargando referencias…</p>
 
-    <!-- Pie de página del proyecto -->
     <footer class="refs__footer reveal">
       <div class="refs__footer-divider"></div>
       <p class="refs__footer-title font-classical">La Evolución de la Música</p>
@@ -92,7 +89,6 @@ onMounted(async () => {
   border-top: 1px solid var(--border);
 }
 
-/* ── Cita destacada ──────────────────────────────────── */
 .refs__pullquote {
   max-width: 760px;
   margin: 0 auto 70px;
@@ -115,7 +111,6 @@ onMounted(async () => {
   color: var(--gold-700);
 }
 
-/* ── Lista de referencias ────────────────────────────── */
 .refs__list {
   max-width: 1100px;
   margin: 0 auto;
@@ -208,7 +203,6 @@ onMounted(async () => {
   padding: 40px;
 }
 
-/* ── Pie de página ───────────────────────────────────── */
 .refs__footer {
   max-width: 700px;
   margin: 90px auto 0;

@@ -1,7 +1,6 @@
 <template>
   <div class="player" :style="{ '--accent': accentColor }">
 
-    <!-- Elemento de audio (oculto, controlado por JS) -->
     <audio
       ref="audioEl"
       :src="src || undefined"
@@ -14,21 +13,18 @@
       @error="onError"
     ></audio>
 
-    <!-- Sin audio cargado todavía -->
     <div v-if="!src" class="player__empty">
       <span class="player__empty-icon">♪</span>
       <p>Audio aún no disponible.</p>
       <small>Sube el archivo a <code>public/audio/</code> y añade la ruta en el JSON.</small>
     </div>
 
-    <!-- Error al cargar -->
     <div v-else-if="errored" class="player__empty">
       <span class="player__empty-icon">⚠</span>
       <p>No se pudo cargar el audio.</p>
       <small>Revisa que la ruta <code>{{ src }}</code> exista.</small>
     </div>
 
-    <!-- Reproductor completo -->
     <div v-else class="player__controls">
       <button
         class="player__btn player__btn--skip"
@@ -84,6 +80,7 @@
 
 <script setup>
 import { ref, computed, watch, onUnmounted } from 'vue'
+import { connectAnalyser } from '../composables/useAudioAnalyser.js'
 
 const props = defineProps({
   src:         { type: String, default: '' },
@@ -101,12 +98,16 @@ const progressPct = computed(() =>
   duration.value > 0 ? (currentTime.value / duration.value) * 100 : 0
 )
 
+let analyserObj = null
 function toggle() {
   const el = audioEl.value
   if (!el) return
-  if (el.paused) el.play().catch(() => { errored.value = true })
-  else el.pause()
+  if (el.paused) {
+    if (!analyserObj) analyserObj = connectAnalyser(el)
+    el.play().catch(() => { errored.value = true })
+  } else el.pause()
 }
+function getAnalyser() { return analyserObj }
 
 function skip(seconds) {
   const el = audioEl.value
@@ -135,7 +136,6 @@ function fmt(s) {
   return `${m}:${sec}`
 }
 
-// Si cambia la canción, reinicia y detiene
 watch(() => props.src, () => {
   errored.value = false
   currentTime.value = 0
@@ -143,14 +143,13 @@ watch(() => props.src, () => {
   isPlaying.value = false
 })
 
-// Detener el audio al desmontar (cerrar modal)
 onUnmounted(() => {
   if (audioEl.value) { audioEl.value.pause(); audioEl.value.src = '' }
 })
 
-// Exponer pause para el padre
 defineExpose({
   pause: () => audioEl.value?.pause(),
+  getAnalyser,
 })
 </script>
 
@@ -159,7 +158,6 @@ defineExpose({
   width: 100%;
 }
 
-/* Estado vacío / error */
 .player__empty {
   text-align: center;
   padding: 20px 16px;
@@ -187,7 +185,6 @@ defineExpose({
   font-size: 0.7rem;
 }
 
-/* Controles */
 .player__controls {
   display: flex;
   align-items: center;
@@ -235,7 +232,6 @@ defineExpose({
 }
 .player__btn--skip span { font-size: 0.58rem; }
 
-/* Barra de progreso */
 .player__track {
   flex: 1;
   min-width: 0;
